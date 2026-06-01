@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shanora Digital — Social Media Agency | Strategy · Content · Growth</title>
+<meta name="description" content="Shanora Digital is a full-service social media agency with 8+ years of combined experience. We craft tailored strategies to grow your brand across Instagram, Facebook, LinkedIn, YouTube and more.">
+<link rel="icon" href="logo.jpeg">
+<meta property="og:title" content="Shanora Digital — Social Media Agency">
+<meta property="og:description" content="We grow brands that people love to follow. Strategy · Content · Growth.">
+<meta property="og:image" content="logo.jpeg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --gold:#C9A24B; --gold-lt:#E8C56B; --gold-dp:#A67C2E;
+    --navy:#0B1626; --navy2:#13243C; --navy3:#16314E; --blue:#2C5282;
+    --ink:#13233B; --slate:#586173; --muted:#8A93A3; --line:#ECE6D8;
+    --soft:#FBF8F1; --cream:#FCFAF4; --card:#fff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:"Plus Jakarta Sans",-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);
+    background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{width:100%;max-width:1160px;margin:0 auto;padding:0 24px;}
+  section{scroll-margin-top:80px;}
+
+  /* ---------- buttons ---------- */
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:15px;border-radius:50px;
+    padding:14px 26px;cursor:pointer;border:none;transition:transform .2s ease, box-shadow .2s ease, background .2s ease;white-space:nowrap;}
+  .btn svg{width:18px;height:18px;}
+  .btn-gold{background:linear-gradient(135deg,#E8C56B,#C9A24B);color:#0B1626;box-shadow:0 8px 22px rgba(201,162,75,.35);}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(201,162,75,.45);}
+  .btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4);}
+  .btn-ghost:hover{border-color:var(--gold-lt);color:var(--gold-lt);}
+  .btn-dark{background:var(--navy);color:#fff;}
+  .btn-dark:hover{transform:translateY(-2px);background:var(--navy3);}
+
+  /* ---------- navbar ---------- */
+  header{position:sticky;top:0;z-index:100;background:rgba(11,22,38,.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(201,162,75,.18);}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px;}
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand img{width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(201,162,75,.5);}
+  .brand .bn{font-size:19px;font-weight:800;letter-spacing:1.5px;color:#F5EFDE;line-height:1;}
+  .brand .bs{font-size:8px;letter-spacing:3px;color:var(--gold-lt);text-transform:uppercase;margin-top:3px;font-weight:600;}
+  .navlinks{display:flex;align-items:center;gap:30px;}
+  .navlinks a{color:#D6CFC0;font-size:15px;font-weight:500;transition:color .2s;}
+  .navlinks a:hover{color:var(--gold-lt);}
+  .nav .btn{padding:11px 20px;font-size:14px;}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
+  .burger span{width:24px;height:2px;background:var(--gold-lt);border-radius:2px;transition:.3s;}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;color:#F5EFDE;overflow:hidden;
+    background:
+      radial-gradient(800px 480px at 82% -8%, rgba(201,162,75,.30), transparent 58%),
+      radial-gradient(760px 580px at -8% 112%, rgba(44,82,130,.42), transparent 55%),
+      linear-gradient(150deg,#070F1C 0%,#0B1626 42%,#10203A 72%,#13283F 100%);}
+  .hero .wrap{padding-top:90px;padding-bottom:96px;position:relative;z-index:2;}
+  .glow{position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;}
+  .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border:1px solid rgba(201,162,75,.45);
+    border-radius:50px;font-size:13px;letter-spacing:1px;text-transform:uppercase;font-weight:600;color:var(--gold-lt);
+    background:rgba(201,162,75,.08);margin-bottom:26px;}
+  .hero h1{font-size:clamp(38px,6vw,68px);font-weight:800;line-height:1.04;letter-spacing:-1.5px;max-width:13ch;}
+  .hero h1 .hl{color:var(--gold-lt);}
+  .hero p.sub{font-size:clamp(15px,2vw,18px);color:#D6CFC0;max-width:60ch;margin-top:22px;line-height:1.7;}
+  .hero .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;}
+  .hero .stats{display:flex;flex-wrap:wrap;gap:40px;margin-top:54px;padding-top:30px;border-top:1px solid rgba(201,162,75,.22);}
+  .hero .stat .n{font-size:34px;font-weight:800;color:var(--gold-lt);line-height:1;}
+  .hero .stat .l{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#B9B2A2;margin-top:7px;}
+
+  /* ---------- section base ---------- */
+  .sec{padding:96px 0;}
+  .sec.soft{background:var(--cream);}
+  .eyebrow{display:inline-block;font-size:13px;letter-spacing:3px;text-transform:uppercase;font-weight:700;color:var(--gold-dp);margin-bottom:12px;}
+  .sec h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-.6px;line-height:1.12;}
+  .sec h2 .accent{color:var(--gold-dp);}
+  .rule{width:60px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--gold-dp),var(--gold-lt));margin:16px 0 26px;}
+  .lead{font-size:17px;color:var(--slate);max-width:65ch;line-height:1.75;}
+  .center{text-align:center;}
+  .center .rule{margin-left:auto;margin-right:auto;}
+  .center .lead{margin-left:auto;margin-right:auto;}
+
+  /* ---------- about ---------- */
+  .about-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:50px;align-items:center;}
+  .vrow{display:flex;gap:15px;padding:16px 0;border-bottom:1px solid var(--line);}
+  .vrow:last-child{border-bottom:none;}
+  .vrow .ic{width:44px;height:44px;border-radius:12px;flex:0 0 44px;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(145deg,#FBF1D8,#F1DEAC);color:var(--gold-dp);}
+  .vrow .ic svg{width:22px;height:22px;}
+  .vrow b{display:block;font-size:16px;margin-bottom:3px;}
+  .vrow span{font-size:14px;color:var(--slate);}
+  .statcards{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .scard{background:var(--soft);border:1px solid var(--line);border-radius:18px;padding:22px;}
+  .scard .n{font-size:32px;font-weight:800;color:var(--gold-dp);line-height:1;}
+  .scard .n.sm{font-size:23px;}
+  .scard .l{font-size:13px;color:var(--slate);margin-top:9px;line-height:1.45;}
+  .promise{grid-column:1 / -1;background:linear-gradient(155deg,#0B1626,#16314E);border-radius:18px;padding:24px;color:#F0E9D8;}
+  .promise .k{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-lt);font-weight:700;margin-bottom:10px;}
+  .promise .q{font-size:18px;font-weight:600;line-height:1.55;}
+
+  /* ---------- cards grid ---------- */
+  .grid{display:grid;gap:22px;}
+  .g3{grid-template-columns:repeat(3,1fr);}
+  .g4{grid-template-columns:repeat(4,1fr);}
+  .g2{grid-template-columns:repeat(2,1fr);}
+  .svc{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px;position:relative;overflow:hidden;
+    transition:transform .25s ease, box-shadow .25s ease;}
+  .svc::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--gold-dp),var(--gold-lt));}
+  .svc:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(40,40,30,.10);}
+  .svc .ic{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+    background:linear-gradient(145deg,#FBF1D8,#F1DEAC);color:var(--gold-dp);}
+  .svc .ic svg{width:26px;height:26px;}
+  .svc h3{font-size:18px;font-weight:700;margin-bottom:8px;}
+  .svc p{font-size:14.5px;color:var(--slate);}
+
+  /* ---------- process ---------- */
+  .step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 22px;text-align:center;}
+  .stepno{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;
+    font-weight:800;font-size:18px;color:#0B1626;background:linear-gradient(145deg,#E8C56B,#C9A24B);}
+  .step h4{font-size:17px;font-weight:700;margin-bottom:6px;}
+  .step p{font-size:13.5px;color:var(--slate);}
+
+  /* ---------- pricing ---------- */
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch;}
+  .plan{background:#fff;border:1px solid var(--line);border-radius:24px;padding:34px 28px;display:flex;flex-direction:column;position:relative;
+    transition:transform .25s ease, box-shadow .25s ease;}
+  .plan:hover{transform:translateY(-6px);box-shadow:0 20px 46px rgba(40,40,30,.10);}
+  .plan.feat{background:linear-gradient(165deg,#0B1626,#16314E);color:#F2ECDC;border:1.5px solid rgba(201,162,75,.55);}
+  .plan.feat:hover{box-shadow:0 26px 54px rgba(11,22,38,.4);}
+  .ribbon{position:absolute;top:22px;right:22px;background:linear-gradient(145deg,#E8C56B,#C9A24B);color:#0B1626;
+    font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:6px 13px;border-radius:50px;}
+  .tier{font-size:14px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;color:var(--gold-dp);}
+  .plan.feat .tier{color:var(--gold-lt);}
+  .price{margin:16px 0 4px;display:flex;align-items:baseline;gap:4px;}
+  .price .cur{font-size:24px;font-weight:700;}
+  .price .amt{font-size:52px;font-weight:800;letter-spacing:-1.5px;line-height:1;}
+  .per{font-size:14px;color:var(--muted);font-weight:600;margin-bottom:16px;}
+  .plan.feat .per{color:#C9C2B2;}
+  .plan .desc{font-size:14px;color:var(--slate);margin-bottom:20px;min-height:62px;}
+  .plan.feat .desc{color:#CFC8B8;}
+  .feats{list-style:none;flex:1;margin-bottom:24px;}
+  .feats li{display:flex;gap:11px;align-items:flex-start;font-size:14.5px;padding:9px 0;border-top:1px solid var(--line);}
+  .plan.feat .feats li{border-top:1px solid rgba(201,162,75,.2);}
+  .feats li:first-child{border-top:none;}
+  .feats svg{flex:0 0 18px;width:18px;height:18px;margin-top:2px;}
+  .plan .btn{width:100%;justify-content:center;}
+  .pricenote{text-align:center;font-size:13.5px;color:var(--muted);margin-top:28px;}
+
+  /* ---------- clients ---------- */
+  .subhead{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;color:var(--ink);
+    margin:8px 0 18px;display:flex;align-items:center;gap:14px;}
+  .subhead::after{content:"";flex:1;height:1px;background:var(--line);}
+  .client{display:flex;align-items:center;gap:16px;border:1px solid var(--line);border-radius:16px;padding:20px;background:#fff;
+    transition:transform .2s ease, box-shadow .2s ease;}
+  .client:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(40,40,30,.08);}
+  .client .mono{width:54px;height:54px;border-radius:14px;flex:0 0 54px;display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:19px;color:#0B1626;background:linear-gradient(145deg,#E8C56B,#C9A24B);letter-spacing:.5px;}
+  .client b{font-size:16px;display:block;line-height:1.3;}
+  .client span{font-size:13px;color:var(--muted);display:block;margin-top:3px;}
+  .badge{display:inline-block;margin-top:6px;font-size:11px;font-weight:700;color:var(--gold-dp);background:#FBF1D8;
+    border-radius:50px;padding:3px 11px;}
+
+  /* ---------- platforms ---------- */
+  .plat{display:flex;align-items:center;gap:15px;border:1px solid var(--line);border-radius:16px;padding:18px 20px;background:#fff;
+    transition:transform .2s ease;}
+  .plat:hover{transform:translateY(-4px);}
+  .plat .pi{width:48px;height:48px;border-radius:13px;display:flex;align-items:center;justify-content:center;flex:0 0 48px;}
+  .plat .pi svg{width:26px;height:26px;fill:#fff;}
+  .plat b{font-size:16px;}
+  .plat span{font-size:13px;color:var(--muted);}
+
+  /* ---------- contact ---------- */
+  .contact{position:relative;overflow:hidden;color:#F2ECDC;
+    background:radial-gradient(700px 460px at 88% 0%, rgba(201,162,75,.16), transparent 60%),
+      linear-gradient(150deg,#070F1C,#0F2138 55%,#16314E);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:start;}
+  .contact h2{color:#F7F2E4;}
+  .contact h2 .accent{color:var(--gold-lt);}
+  .contact .lead{color:#D2CBBB;}
+  .cmethods{margin-top:30px;display:flex;flex-direction:column;gap:16px;}
+  .cmethod{display:flex;align-items:center;gap:15px;}
+  .cmethod .ci{width:46px;height:46px;border-radius:12px;background:rgba(201,162,75,.16);display:flex;align-items:center;justify-content:center;flex:0 0 46px;}
+  .cmethod .ci svg{width:20px;height:20px;stroke:var(--gold-lt);}
+  .cmethod small{display:block;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#A79F8C;}
+  .cmethod b{font-size:17px;font-weight:600;color:#F2ECDC;}
+  .form{background:rgba(255,255,255,.04);border:1px solid rgba(201,162,75,.22);border-radius:22px;padding:30px;}
+  .form label{display:block;font-size:13px;font-weight:600;color:#CFC8B8;margin:14px 0 7px;}
+  .form input,.form textarea{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:12px;
+    padding:13px 15px;color:#fff;font-family:inherit;font-size:15px;outline:none;transition:border .2s;}
+  .form input:focus,.form textarea:focus{border-color:var(--gold-lt);}
+  .form input::placeholder,.form textarea::placeholder{color:#8A93A3;}
+  .form .btn{width:100%;justify-content:center;margin-top:22px;}
+  .form .first{margin-top:0;}
+
+  /* ---------- footer ---------- */
+  footer{background:#070F1C;color:#9AA2AE;padding:54px 0 30px;}
+  .foot-top{display:flex;justify-content:space-between;align-items:flex-start;gap:30px;flex-wrap:wrap;
+    padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.08);}
+  .foot-brand{display:flex;align-items:center;gap:13px;}
+  .foot-brand img{width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(201,162,75,.5);}
+  .foot-brand .bn{font-size:20px;font-weight:800;letter-spacing:1.5px;color:#F5EFDE;}
+  .foot-brand .bs{font-size:9px;letter-spacing:3px;color:var(--gold-lt);text-transform:uppercase;font-weight:600;margin-top:3px;}
+  .foot-links{display:flex;gap:26px;flex-wrap:wrap;}
+  .foot-links a{font-size:14px;color:#B7BEC8;transition:color .2s;}
+  .foot-links a:hover{color:var(--gold-lt);}
+  .foot-bot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:22px;font-size:13px;}
+  .foot-bot a{color:var(--gold-lt);}
+
+  /* ---------- responsive ---------- */
+  @media(max-width:900px){
+    .about-grid{grid-template-columns:1fr;gap:36px;}
+    .g3{grid-template-columns:repeat(2,1fr);}
+    .g4{grid-template-columns:repeat(2,1fr);}
+    .plans{grid-template-columns:1fr;max-width:440px;margin:0 auto;}
+    .plan.feat{order:-1;}
+    .contact-grid{grid-template-columns:1fr;gap:36px;}
+  }
+  @media(max-width:680px){
+    .navlinks{position:absolute;top:72px;left:0;right:0;background:rgba(11,22,38,.98);flex-direction:column;
+      gap:0;padding:10px 0;border-bottom:1px solid rgba(201,162,75,.18);max-height:0;overflow:hidden;transition:max-height .3s ease;}
+    .navlinks.open{max-height:420px;}
+    .navlinks a{width:100%;padding:14px 24px;}
+    .navlinks .btn{margin:10px 24px;width:calc(100% - 48px);justify-content:center;}
+    .burger{display:flex;}
+    .sec{padding:64px 0;}
+    .hero .wrap{padding-top:60px;padding-bottom:70px;}
+    .g3,.g4,.g2{grid-template-columns:1fr;}
+    .statcards{grid-template-columns:1fr 1fr;}
+    .hero .stats{gap:24px;}
+    .hero .stat .n{font-size:26px;}
+    .hero .cta-row{flex-direction:column;align-items:stretch;}
+    .hero .cta-row .btn{justify-content:center;}
+  }
+  @media(max-width:400px){ .statcards{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <img src="logo.jpeg" alt="Shanora Digital logo">
+      <div><div class="bn">SHANORA</div><div class="bs">Digital</div></div>
+    </a>
+    <nav class="navlinks" id="nav">
+      <a href="#about" onclick="closeNav()">About</a>
+      <a href="#services" onclick="closeNav()">Services</a>
+      <a href="#pricing" onclick="closeNav()">Pricing</a>
+      <a href="#clients" onclick="closeNav()">Clients</a>
+      <a class="btn btn-gold" href="#contact" onclick="closeNav()">Get a Quote</a>
+    </nav>
+    <button class="burger" aria-label="Menu" onclick="toggleNav()"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="glow" style="width:340px;height:340px;background:#C9A24B;top:-60px;right:6%;"></div>
+  <div class="glow" style="width:300px;height:300px;background:#2C5282;bottom:-80px;left:-4%;opacity:.4;"></div>
+  <div class="wrap">
+    <span class="pill">★ 8+ Years of Combined Expertise</span>
+    <h1>We grow brands that people <span class="hl">love to follow.</span></h1>
+    <p class="sub">Shanora Digital is a full-service social media agency that crafts tailored strategies to amplify your brand, engage your audience, and turn followers into customers — across every platform that matters.</p>
+    <div class="cta-row">
+      <a class="btn btn-gold" href="#contact">Book a Free Strategy Call
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-ghost" href="#pricing">View Pricing</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="n">8+</div><div class="l">Years Experience</div></div>
+      <div class="stat"><div class="n">All</div><div class="l">Social Platforms</div></div>
+      <div class="stat"><div class="n">Tailored</div><div class="l">Every Strategy</div></div>
+      <div class="stat"><div class="n">Monthly</div><div class="l">Transparent Reports</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <span class="eyebrow">Who We Are</span>
+    <h2>A social-first studio <span class="accent">built on results.</span></h2>
+    <div class="rule"></div>
+    <div class="about-grid">
+      <div>
+        <p class="lead">Shanora Digital was founded by a team with more than eight years of hands-on experience in social media marketing, content creation, and paid growth. We don't believe in one-size-fits-all — every brand gets a strategy shaped around its voice, audience and goals.</p>
+        <div style="margin-top:24px;">
+          <div class="vrow">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 5 5.6.8-4 4 1 5.6L12 20l-5 2.4 1-5.6-4-4 5.6-.8z"/></svg></div>
+            <div><b>Tailored strategy</b><span>No templates. A content &amp; growth plan around your specific brand.</span></div>
+          </div>
+          <div class="vrow">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M19 9l-5 5-3-3-4 4"/></svg></div>
+            <div><b>Data-driven decisions</b><span>Every move is measured, reviewed and optimised against real numbers.</span></div>
+          </div>
+          <div class="vrow">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M2 21v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1"/><path d="M16 3.5a3 3 0 0 1 0 7"/></svg></div>
+            <div><b>A dedicated team</b><span>Strategists, designers and editors working as an extension of your brand.</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="statcards">
+        <div class="scard"><div class="n">8+</div><div class="l">Years of combined industry experience</div></div>
+        <div class="scard"><div class="n sm">All</div><div class="l">Social platforms managed end-to-end</div></div>
+        <div class="scard"><div class="n sm">Tailored</div><div class="l">Strategy built around every brand</div></div>
+        <div class="scard"><div class="n sm">Monthly</div><div class="l">Transparent performance reporting</div></div>
+        <div class="promise">
+          <div class="k">Our Promise</div>
+          <div class="q">“Clear strategy, consistent content and honest reporting — every single month.”</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="sec soft" id="services">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">What We Do</span>
+      <h2>Services that cover the <span class="accent">whole journey.</span></h2>
+      <div class="rule"></div>
+      <p class="lead" style="margin-bottom:42px;">From strategy and creative to community and paid growth — everything your brand needs to win on social, under one roof.</p>
+    </div>
+    <div class="grid g3">
+      <div class="svc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div><h3>Strategy &amp; Content Calendars</h3><p>Platform-specific posting plans built around your goals, with scheduling handled end to end.</p></div>
+      <div class="svc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7a4 4 0 0 0-6-6l-7 7a3 3 0 0 0 4 4l6-6"/></svg></div><h3>Creative &amp; Design</h3><p>Scroll-stopping graphics, captions and branded templates tailored to your identity.</p></div>
+      <div class="svc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div><h3>Video &amp; Reels Editing</h3><p>Professional short-form editing for Reels, Shorts and TikTok that's made to be shared.</p></div>
+      <div class="svc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>Community Management</h3><p>Responding to comments and DMs, building real relationships and protecting your reputation.</p></div>
+      <div class="svc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6"/><rect x="12" y="7" width="3" height="10"/><rect x="17" y="13" width="3" height="4"/></svg></div><h3>Paid Ad Campaigns</h3><p>Meta &amp; Instagram ad management with audience targeting, A/B testing and optimisation.</p></div>
+      <div class="svc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><h3>Analytics &amp; Reporting</h3><p>Conversion tracking and clear monthly reports so growth is always measurable.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="sec" id="process">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">How We Work</span>
+      <h2>A simple, proven <span class="accent">4-step process.</span></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="grid g4" style="margin-top:14px;">
+      <div class="step"><div class="stepno">1</div><h4>Discover</h4><p>We learn your brand, audience, competitors and goals.</p></div>
+      <div class="step"><div class="stepno">2</div><h4>Strategise</h4><p>We design a tailored content &amp; growth roadmap.</p></div>
+      <div class="step"><div class="stepno">3</div><h4>Create &amp; Publish</h4><p>We produce, schedule and post on a steady cadence.</p></div>
+      <div class="step"><div class="stepno">4</div><h4>Review &amp; Optimise</h4><p>We measure results and refine for compounding growth.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="sec soft" id="pricing">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Plans &amp; Pricing</span>
+      <h2>Simple monthly plans, <span class="accent">real growth.</span></h2>
+      <div class="rule"></div>
+      <p class="lead" style="margin-bottom:46px;">Transparent monthly retainers with no hidden fees. Pick the tier that matches where your brand is today.</p>
+    </div>
+    <div class="plans">
+      <div class="plan">
+        <div class="tier">Basic</div>
+        <div class="price"><span class="cur">₹</span><span class="amt">22,500</span></div>
+        <div class="per">per month</div>
+        <div class="desc">Perfect for brands starting out who need a consistent, professional presence.</div>
+        <ul class="feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Management of 3 platforms (IG, FB, LinkedIn)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Video editing (footage provided by you)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Content calendar &amp; scheduled posts</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Community engagement (comments &amp; DMs)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Monthly performance report</li>
+        </ul>
+        <a class="btn btn-dark" href="#contact">Choose Basic</a>
+      </div>
+
+      <div class="plan feat">
+        <div class="ribbon">★ Most Popular</div>
+        <div class="tier">Growth</div>
+        <div class="price"><span class="cur">₹</span><span class="amt">35,000</span></div>
+        <div class="per">per month</div>
+        <div class="desc">For brands ready to scale with custom creative and weekly optimisation.</div>
+        <ul class="feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#E8C56B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Everything in Basic, plus:</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#E8C56B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Custom content creation (graphics &amp; captions)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#E8C56B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Custom video creation &amp; editing</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#E8C56B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Weekly performance reviews</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#E8C56B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Ongoing strategy adjustments</li>
+        </ul>
+        <a class="btn btn-gold" href="#contact">Choose Growth</a>
+      </div>
+
+      <div class="plan">
+        <div class="tier">Premium</div>
+        <div class="price"><span class="cur">₹</span><span class="amt">50,000</span></div>
+        <div class="per">per month</div>
+        <div class="desc">A full growth engine with paid ads, advanced analytics and strategy.</div>
+        <ul class="feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Everything in Growth, plus:</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Paid ad campaign management (ad spend by brand)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Audience targeting &amp; optimisation</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Advanced analytics</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Monthly strategy sessions</li>
+        </ul>
+        <a class="btn btn-dark" href="#contact">Choose Premium</a>
+      </div>
+    </div>
+    <p class="pricenote">All prices are per month, exclusive of applicable taxes and ad spend. &nbsp;•&nbsp; Quarterly billing available with up to 10% off. &nbsp;•&nbsp; Custom enterprise packages on request.</p>
+  </div>
+</section>
+
+<!-- ============ CLIENTS ============ -->
+<section class="sec" id="clients">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Our Clients</span>
+      <h2>Brands &amp; creators <span class="accent">we've grown.</span></h2>
+      <div class="rule"></div>
+      <p class="lead" style="margin-bottom:40px;">A snapshot of the businesses, institutions and creators who trust Shanora Digital with their social presence.</p>
+    </div>
+    <div class="subhead">Businesses &amp; Institutions</div>
+    <div class="grid g3">
+      <div class="client"><div class="mono">CF</div><div><b>Coach Foundation</b><span>Coaching &amp; Education</span></div></div>
+      <div class="client"><div class="mono">XO</div><div><b>XOXO Healthy Café</b><span>Food &amp; Beverage</span></div></div>
+      <div class="client"><div class="mono">VC</div><div><b>Valia College of Arts, Science &amp; Commerce</b><span>Education</span><span class="badge">6 accounts managed</span></div></div>
+    </div>
+    <div class="subhead" style="margin-top:36px;">Creators &amp; Influencers</div>
+    <div class="grid g2">
+      <div class="client"><div class="mono">TI</div><div><b>@train_insane_era</b><span>Rishabh Kumar · Influencer</span></div></div>
+      <div class="client"><div class="mono">MN</div><div><b>Miss Narang</b><span>Influencer · Personal Brand</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLATFORMS ============ -->
+<section class="sec soft" id="platforms">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Where We Work</span>
+      <h2>Every platform that <span class="accent">moves your brand.</span></h2>
+      <div class="rule"></div>
+      <p class="lead" style="margin-bottom:40px;">We manage your presence across all the channels your audience actually uses.</p>
+    </div>
+    <div class="grid g3">
+      <div class="plat"><div class="pi" style="background:linear-gradient(135deg,#F58529,#DD2A7B,#8134AF);"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.1A6.7 6.7 0 1 0 18.7 12 6.7 6.7 0 0 0 12 5.3zm0 11A4.3 4.3 0 1 1 16.3 12 4.3 4.3 0 0 1 12 16.3zm6.9-11.3a1.6 1.6 0 1 1-1.6-1.6 1.6 1.6 0 0 1 1.6 1.6z"/></svg></div><div><b>Instagram</b><span>Reels, Stories &amp; Grid</span></div></div>
+      <div class="plat"><div class="pi" style="background:#1877F2;"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg></div><div><b>Facebook</b><span>Pages &amp; Groups</span></div></div>
+      <div class="plat"><div class="pi" style="background:#0A66C2;"><svg viewBox="0 0 24 24"><path d="M20.4 3H3.6A.6.6 0 0 0 3 3.6v16.8a.6.6 0 0 0 .6.6h16.8a.6.6 0 0 0 .6-.6V3.6a.6.6 0 0 0-.6-.6zM8.3 18.3H5.5V9.4h2.8v8.9zM6.9 8.2a1.6 1.6 0 1 1 0-3.3 1.6 1.6 0 0 1 0 3.3zm11.4 10.1h-2.8v-4.3c0-1 0-2.4-1.4-2.4s-1.7 1.1-1.7 2.3v4.4H9.6V9.4h2.7v1.2h.1a3 3 0 0 1 2.6-1.4c2.8 0 3.3 1.8 3.3 4.2v4.9z"/></svg></div><div><b>LinkedIn</b><span>B2B &amp; Thought Leadership</span></div></div>
+      <div class="plat"><div class="pi" style="background:#FF0000;"><svg viewBox="0 0 24 24"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.7-1.7C19.3 5.2 12 5.2 12 5.2s-7.3 0-8.9.4A2.5 2.5 0 0 0 1.4 7.3C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 0 0 1.7 1.7c1.6.4 8.9.4 8.9.4s7.3 0 8.9-.4a2.5 2.5 0 0 0 1.7-1.7C23 15.2 23 12 23 12zM9.7 15.1V8.9l5.4 3.1z"/></svg></div><div><b>YouTube</b><span>Shorts &amp; Long-form</span></div></div>
+      <div class="plat"><div class="pi" style="background:#000;"><svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.6 8.7L23 22h-6.9l-5.4-7-6.2 7H1.3l8.1-9.3L1 2h7l4.9 6.5zm-1.2 18h1.7L7.4 3.8H5.6z"/></svg></div><div><b>X (Twitter)</b><span>Real-time Engagement</span></div></div>
+      <div class="plat"><div class="pi" style="background:#000;"><svg viewBox="0 0 24 24"><path d="M16.6 5.8a4.3 4.3 0 0 1-1-2.8h-3.3v13.3a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1v-3.4a6 6 0 1 0 5.1 5.9V9.7a7.5 7.5 0 0 0 4.4 1.4V7.8a4.3 4.3 0 0 1-3.4-2z"/></svg></div><div><b>TikTok</b><span>Viral Short-form</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="sec contact" id="contact">
+  <div class="glow" style="width:300px;height:300px;background:#C9A24B;top:-80px;right:8%;opacity:.25;"></div>
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <span class="eyebrow" style="color:var(--gold-lt);">Let's Talk</span>
+        <h2>Let's grow something <span class="accent">great together.</span></h2>
+        <div class="rule"></div>
+        <p class="lead">Book a free 30-minute strategy call and we'll show you exactly how Shanora Digital can elevate your social presence — and what your first 90 days could look like.</p>
+        <div class="cmethods">
+          <a class="cmethod" href="https://wa.me/918879690919?text=Hi%20Shanora%20Digital%2C%20I'd%20like%20to%20know%20more%20about%20your%20social%20media%20plans." target="_blank" rel="noopener">
+            <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></div>
+            <div><small>Phone / WhatsApp</small><b>+91 88796 90919</b></div>
+          </a>
+          <a class="cmethod" href="mailto:shanoradigital@gmail.com">
+            <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></div>
+            <div><small>Email</small><b>shanoradigital@gmail.com</b></div>
+          </a>
+        </div>
+      </div>
+
+      <form class="form" action="https://formspree.io/f/your-form-id" method="POST">
+        <label class="first" for="name">Your Name</label>
+        <input id="name" name="name" type="text" placeholder="Jane Doe" required>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@brand.com" required>
+        <label for="msg">How can we help?</label>
+        <textarea id="msg" name="message" rows="4" placeholder="Tell us about your brand and goals…" required></textarea>
+        <button class="btn btn-gold" type="submit">Send Message
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <a class="foot-brand" href="#top">
+        <img src="logo.jpeg" alt="Shanora Digital">
+        <div><div class="bn">SHANORA</div><div class="bs">Digital · Strategy · Content · Growth</div></div>
+      </a>
+      <div class="foot-links">
+        <a href="#about">About</a><a href="#services">Services</a><a href="#pricing">Pricing</a>
+        <a href="#clients">Clients</a><a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© <span id="yr">2026</span> Shanora Digital. All rights reserved.</span>
+      <span><a href="mailto:shanoradigital@gmail.com">shanoradigital@gmail.com</a> &nbsp;·&nbsp; <a href="https://wa.me/918879690919" target="_blank" rel="noopener">+91 88796 90919</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleNav(){document.getElementById('nav').classList.toggle('open');}
+  function closeNav(){document.getElementById('nav').classList.remove('open');}
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
