@@ -481,14 +481,14 @@
             <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></div>
             <div><small>Email</small><b>contact@shanoradigital.com</b></div>
           </a>
-          <a class="cmethod" href="https://www.google.com/maps/search/?api=1&query=102%20Floor%201%2C%20Wing%206A%20Versova%2C%20Shubham%20Karotichsl%20New%20Mhadalokhanwala%20Back%20Road%2C%20Azad%20Nagar%2C%20Swami%20Samarth%20Nagar%20Andheri%20West%2C%20Mumbai%20400053" target="_blank" rel="noopener">
+          <a class="cmethod" href="https://www.google.com/maps/search/?api=1&query=102%20Floor%201%2C%20Wing%206A%2C%20Shubham%20Karoti%20CHSL%2C%20New%20MHADA%20Lokhanwala%20Back%20Road%2C%20Azad%20Nagar%2C%20Swami%20Samarth%20Nagar%2C%20Andheri%20West%2C%20Mumbai%20400053" target="_blank" rel="noopener">
             <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-            <div><small>Address</small><b style="font-size:14px;line-height:1.5;">102 Floor 1, Wing 6A Versova, Shubham Karotichsl New Mhadalokhanwala Back Road, Azad Nagar, Swami Samarth Nagar, Andheri West, Mumbai – 400053</b></div>
+            <div><small>Address</small><b style="font-size:14px;line-height:1.5;">102, Floor 1, Wing 6A, Shubham Karoti CHSL, New MHADA Lokhanwala Back Road, Azad Nagar, Swami Samarth Nagar, Andheri West, Mumbai – 400053</b></div>
           </a>
         </div>
       </div>
 
-      <form class="form" action="https://formspree.io/f/your-form-id" method="POST">
+      <form class="form" onsubmit="return sendMail(this)">
         <label class="first" for="name">Your Name</label>
         <input id="name" name="name" type="text" placeholder="Jane Doe" required>
         <label for="email">Email</label>
@@ -525,6 +525,12 @@
 <script>
   function toggleNav(){document.getElementById('nav').classList.toggle('open');}
   function closeNav(){document.getElementById('nav').classList.remove('open');}
+  function sendMail(f){
+    var subject = 'Website enquiry from ' + f.elements.name.value;
+    var body = 'Name: ' + f.elements.name.value + '\nEmail: ' + f.elements.email.value + '\n\n' + f.elements.message.value;
+    window.location.href = 'mailto:contact@shanoradigital.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    return false;
+  }
   document.getElementById('yr').textContent = new Date().getFullYear();
 </script>
 </body>
