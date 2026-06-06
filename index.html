@@ -163,6 +163,8 @@
   .client:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(40,40,30,.08);}
   .client .mono{width:54px;height:54px;border-radius:14px;flex:0 0 54px;display:flex;align-items:center;justify-content:center;
     font-weight:800;font-size:19px;color:#0B1626;background:linear-gradient(145deg,#E8C56B,#C9A24B);letter-spacing:.5px;}
+  .client .clogo{width:54px;height:54px;border-radius:14px;flex:0 0 54px;object-fit:cover;border:1px solid var(--line);background:#fff;}
+  .client .clogo.fit{object-fit:contain;padding:5px;}
   .client b{font-size:16px;display:block;line-height:1.3;}
   .client span{font-size:13px;color:var(--muted);display:block;margin-top:3px;}
   .badge{display:inline-block;margin-top:6px;font-size:11px;font-weight:700;color:var(--gold-dp);background:#FBF1D8;
@@ -430,7 +432,7 @@
     </div>
     <div class="subhead">Businesses &amp; Institutions</div>
     <div class="grid g3">
-      <div class="client"><div class="mono">CF</div><div><b>Coach Foundation</b><span>Coaching &amp; Education</span></div></div>
+      <div class="client"><img class="clogo fit" src="clients/coachfoundation.png" alt="Coach Foundation logo" loading="lazy"><div><b>Coach Foundation</b><span>Coaching &amp; Education</span></div></div>
       <div class="client"><div class="mono">XO</div><div><b>XOXO Healthy Café</b><span>Food &amp; Beverage</span></div></div>
       <div class="client"><div class="mono">VC</div><div><b>Valia College of Arts, Science &amp; Commerce</b><span>Education</span><span class="badge">6 accounts managed</span></div></div>
     </div>
