@@ -142,8 +142,17 @@
   .price{margin:16px 0 4px;display:flex;align-items:baseline;gap:4px;}
   .price .cur{font-size:24px;font-weight:700;}
   .price .amt{font-size:52px;font-weight:800;letter-spacing:-1.5px;line-height:1;}
-  .per{font-size:14px;color:var(--muted);font-weight:600;margin-bottom:16px;}
+  .per{font-size:14px;color:var(--muted);font-weight:600;margin-bottom:14px;}
   .plan.feat .per{color:#C9C2B2;}
+  .posts{display:inline-block;margin:0 0 18px;font-size:13px;font-weight:700;letter-spacing:.2px;color:var(--gold-dp);
+    background:rgba(201,162,75,.12);border:1px solid rgba(201,162,75,.4);border-radius:50px;padding:6px 15px;}
+  .plan.feat .posts{color:#F0D88A;background:rgba(232,197,107,.14);border-color:rgba(232,197,107,.42);}
+  .curtoggle{display:inline-flex;gap:5px;background:#fff;border:1px solid var(--line);border-radius:50px;padding:5px;
+    box-shadow:0 8px 22px rgba(40,40,30,.07);}
+  .curbtn{border:none;background:transparent;cursor:pointer;font-family:inherit;font-size:14px;font-weight:700;letter-spacing:.3px;
+    color:var(--slate);padding:10px 24px;border-radius:50px;transition:background .2s,color .2s;}
+  .curbtn:hover{color:var(--gold-dp);}
+  .curbtn.on,.curbtn.on:hover{background:linear-gradient(145deg,#0B1626,#16314E);color:#F2ECDC;}
   .plan .desc{font-size:14px;color:var(--slate);margin-bottom:20px;min-height:62px;}
   .plan.feat .desc{color:#CFC8B8;}
   .feats{list-style:none;flex:1;margin-bottom:24px;}
@@ -368,16 +377,21 @@
       <span class="eyebrow">Plans &amp; Pricing</span>
       <h2>Simple monthly plans, <span class="accent">real growth.</span></h2>
       <div class="rule"></div>
-      <p class="lead" style="margin-bottom:46px;">Transparent monthly retainers with no hidden fees. Pick the tier that matches where your brand is today.</p>
+      <p class="lead" style="margin-bottom:26px;">Transparent monthly retainers with no hidden fees. Pick the tier that matches where your brand is today.</p>
+      <div class="curtoggle" role="group" aria-label="Choose currency" style="margin-bottom:42px;">
+        <button type="button" class="curbtn on" data-cur="usd" onclick="setCurrency('usd')">USD&nbsp;($)</button>
+        <button type="button" class="curbtn" data-cur="inr" onclick="setCurrency('inr')">INR&nbsp;(₹)</button>
+      </div>
     </div>
     <div class="plans">
       <div class="plan">
         <div class="tier">Basic</div>
-        <div class="price"><span class="cur">$</span><span class="amt">299</span></div>
+        <div class="price" data-usd="299" data-inr="25,000"><span class="cur">$</span><span class="amt">299</span></div>
         <div class="per">per month</div>
+        <div class="posts">12 posts / month &nbsp;·&nbsp; 3 per week</div>
         <div class="desc">Perfect for brands starting out who need a consistent, professional presence.</div>
         <ul class="feats">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Management of 3 platforms (IG, FB, LinkedIn)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Management of 3 platforms (IG, FB, YouTube)</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Video editing (footage provided by you)</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Content calendar &amp; scheduled posts</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Community engagement (comments &amp; DMs)</li>
@@ -389,8 +403,9 @@
       <div class="plan feat">
         <div class="ribbon">★ Most Popular</div>
         <div class="tier">Growth</div>
-        <div class="price"><span class="cur">$</span><span class="amt">469</span></div>
+        <div class="price" data-usd="469" data-inr="35,000"><span class="cur">$</span><span class="amt">469</span></div>
         <div class="per">per month</div>
+        <div class="posts">20 posts / month &nbsp;·&nbsp; 5 per week</div>
         <div class="desc">For brands ready to scale with custom creative and weekly optimisation.</div>
         <ul class="feats">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="#E8C56B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Everything in Basic, plus:</li>
@@ -404,8 +419,9 @@
 
       <div class="plan">
         <div class="tier">Premium</div>
-        <div class="price"><span class="cur">$</span><span class="amt">669</span></div>
+        <div class="price" data-usd="669" data-inr="50,000"><span class="cur">$</span><span class="amt">669</span></div>
         <div class="per">per month</div>
+        <div class="posts">30 posts / month &nbsp;·&nbsp; Daily (6–7/week)</div>
         <div class="desc">A full growth engine with paid ads, advanced analytics and strategy.</div>
         <ul class="feats">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Everything in Growth, plus:</li>
@@ -529,6 +545,34 @@
     window.location.href = 'mailto:contact@shanoradigital.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
     return false;
   }
+  function setCurrency(c){
+    if(c!=='inr') c='usd';
+    var sym = c==='inr' ? '₹' : '$';
+    document.querySelectorAll('.price').forEach(function(p){
+      var amt = p.getAttribute('data-'+c);
+      if(amt===null) return;
+      p.querySelector('.cur').textContent = sym;
+      p.querySelector('.amt').textContent = amt;
+    });
+    document.querySelectorAll('.curbtn').forEach(function(b){
+      b.classList.toggle('on', b.getAttribute('data-cur')===c);
+    });
+    try{ localStorage.setItem('shanora_currency', c); }catch(e){}
+  }
+  (function initCurrency(){
+    var saved;
+    try{ saved = localStorage.getItem('shanora_currency'); }catch(e){}
+    if(saved!=='usd' && saved!=='inr'){
+      var inIndia = false;
+      try{
+        var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+        var lang = (navigator.language || '');
+        inIndia = tz==='Asia/Kolkata' || tz==='Asia/Calcutta' || /-IN$/i.test(lang);
+      }catch(e){}
+      saved = inIndia ? 'inr' : 'usd';
+    }
+    setCurrency(saved);
+  })();
   document.getElementById('yr').textContent = new Date().getFullYear();
 </script>
 </body>
