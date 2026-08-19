@@ -71,16 +71,29 @@ Grow Shanora's revenue through a professional web presence that converts visitor
     680px block that still handles phone-specific layout (single-column
     grids, stacked CTAs, etc.).
 
+- **Mobile hero video ordering fix** (Aug 19 2026, same day, follow-up
+  session): on `events.html`, the hero (`.hero-grid`) is a 2-column CSS
+  grid — text/CTA left, the real Radha-Krishna reel video right. Below the
+  900px breakpoint it collapses to a single column, but since the video
+  `<div>` comes second in the HTML, it rendered *below* all the hero text
+  and CTAs on mobile instead of as first-fold proof. Fixed by adding
+  `.reel-wrap{order:-1;}` inside the existing `@media(max-width:900px)`
+  block — CSS grid honors `order` for auto-placed items, so the video now
+  displays first on mobile while desktop (video on the right) is untouched.
+  No DOM reorder, so screen readers/print still hit text before video —
+  intentional, this was a visual-only fix.
+
 ## In Progress
-- Nothing active. Ready for review before deploy.
+- Nothing active. Committed and pushed; ready for live verification.
 
 ## Next Steps
+- Verify `shanoradigital.com/events` on an actual mobile viewport
+  post-deploy — confirm the video renders above the hero text/CTA.
 - Get more real photos/videos for the other categories (dhol-tasha,
   magicians, mascots, etc.) — they're still SVG icons; the README has
   the exact ffmpeg commands to add them the same way.
 - Review `events.html` copy/pricing-free positioning ("contact for quote" —
   no fixed price list was provided, so none is shown).
-- Deploy: publish updated files to the existing Cloudflare Workers project.
 
 ## Blockers / Decisions Needed
 - None currently open. (Resolved Aug 19 2026: sub-brand "Shanora Events";
