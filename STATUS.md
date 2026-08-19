@@ -28,18 +28,43 @@ Grow Shanora's revenue through a professional web presence that converts visitor
 - Rewrote `README.md` (was stale — referenced GitHub Pages + Formspree;
   site actually runs on Cloudflare Workers with a plain mailto form).
 
+- **Sales-page revamp of `events.html`** (Aug 19 2026, same day, follow-up
+  request: "page is not good enough for sales"), using real content from
+  `../artist content/` (one real Radha-Krishna Jhanki booking — photo +
+  28s video) and confluencr.com as a reference for trust-first, proof-led
+  structure:
+  - Redesigned hero into a two-column layout: headline/CTA/reassurance
+    copy/stats on the left, a real muted looping video ("reel card") of
+    the actual Radha-Krishna troupe on the right — first-fold proof, not
+    just a promise.
+  - Added a **floating WhatsApp button**, fixed bottom-right, visible on
+    every scroll position across the whole page — directly answers "the
+    inquiry button should also be in the first fold" by making it
+    permanently on-screen, not just in the hero.
+  - Added a one-line reassurance microcopy under the hero CTA ("no fee to
+    enquire… only a 10% deposit once confirmed") to reduce click friction.
+  - Upgraded the Jhanki Troupes card in Category A from an SVG icon to the
+    real photo, badged "Real Shanora Booking" — the one category where we
+    now have genuine proof, left everything else on icons rather than
+    overclaiming.
+  - Optimized source assets with ffmpeg into `assets/artists/` (photo
+    ~237KB, video ~2.5MB muted/faststart, poster frame) — see README's
+    "Adding more artist photos/videos" section for the commands, for reuse
+    when more real content arrives.
+
 ## In Progress
 - Nothing active. Ready for review before deploy.
 
 ## Next Steps
+- Get more real photos/videos for the other categories (dhol-tasha, pandit
+  ji, magicians, mascots, etc.) — they're still SVG icons; the README has
+  the exact ffmpeg commands to add them the same way.
 - Review `events.html` copy/pricing-free positioning ("contact for quote" —
   no fixed price list was provided, so none is shown).
-- When real artist/event photos are available, swap in for the SVG icon
-  route (flagged in README/STATUS as a placeholder-quality decision, not a
-  permanent one).
 - Deploy: publish updated files to the existing Cloudflare Workers project.
 
 ## Blockers / Decisions Needed
 - None currently open. (Resolved Aug 19 2026: sub-brand "Shanora Events";
   same WhatsApp number +91 88796 90919; linked from main nav + homepage
-  banner; SVG/icon illustrations instead of photos.)
+  banner; real photo/video for Jhanki troupes, SVG icons elsewhere until
+  more real content is supplied.)
