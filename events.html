@@ -135,6 +135,7 @@
   .grid{display:grid;gap:22px;}
   .g2{grid-template-columns:repeat(2,1fr);}
   .g3{grid-template-columns:repeat(3,1fr);}
+  .g4{grid-template-columns:repeat(4,1fr);}
   .svc{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;position:relative;overflow:hidden;
     transition:transform .25s ease, box-shadow .25s ease;}
   .svc::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--gold-dp),var(--gold-lt));}
@@ -224,22 +225,27 @@
   .foot-cross a{color:var(--gold-lt);font-weight:600;}
 
   /* ---------- responsive ---------- */
-  @media(max-width:900px){
-    .g3{grid-template-columns:repeat(2,1fr);}
-    .terms-box{padding:28px;}
-    .hero-grid{grid-template-columns:1fr;gap:32px;}
-    .reel-card{max-width:220px;}
-  }
-  @media(max-width:680px){
+  /* nav collapses to a burger earlier than other breakpoints — events.html has
+     more nav items than index.html, so 900/680px alone left a tablet-width gap
+     where the full nav row could overflow. */
+  @media(max-width:960px){
     .navlinks{position:absolute;top:72px;left:0;right:0;background:rgba(11,22,38,.98);flex-direction:column;
       gap:0;padding:10px 0;border-bottom:1px solid rgba(201,162,75,.18);max-height:0;overflow:hidden;transition:max-height .3s ease;}
     .navlinks.open{max-height:460px;}
     .navlinks a{width:100%;padding:14px 24px;}
     .navlinks .btn{margin:10px 24px;width:calc(100% - 48px);justify-content:center;}
     .burger{display:flex;}
+  }
+  @media(max-width:900px){
+    .g3,.g4{grid-template-columns:repeat(2,1fr);}
+    .terms-box{padding:28px;}
+    .hero-grid{grid-template-columns:1fr;gap:32px;}
+    .reel-card{max-width:220px;}
+  }
+  @media(max-width:680px){
     .sec{padding:60px 0;}
     .hero .wrap{padding-top:56px;padding-bottom:64px;}
-    .g2,.g3{grid-template-columns:1fr;}
+    .g2,.g3,.g4{grid-template-columns:1fr;}
     .hero .stats{gap:22px;}
     .hero .stat .n{font-size:24px;}
     .hero .cta-row{flex-direction:column;align-items:stretch;}
@@ -291,7 +297,6 @@
         </div>
         <div class="stats">
           <div class="stat"><div class="n">100%</div><div class="l">Background-Checked Artists</div></div>
-          <div class="stat"><div class="n">2</div><div class="l">Cultural &amp; Birthday Events</div></div>
           <div class="stat"><div class="n">10%</div><div class="l">Deposit to Confirm Booking</div></div>
           <div class="stat"><div class="n">Mumbai</div><div class="l">Based &amp; Focused</div></div>
         </div>
@@ -400,11 +405,6 @@
         <p>Traditional wind musicians for weddings, grihapravesh and other auspicious ceremonies.</p>
       </div>
       <div class="svc">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c1.5 2 1.5 4 0 5.5C10.5 6 10.5 4 12 2z"/><path d="M4 14c0-1 .5-2 2-2h12c1.5 0 2 1 2 2 0 3.5-3.5 6-8 6s-8-2.5-8-6z"/></svg></div>
-        <h3>Pandit Ji Bookings</h3>
-        <p>Experienced, verified priests for puja, havan and religious ceremonies — briefed on your family's specific rituals in advance.</p>
-      </div>
-      <div class="svc">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><path d="M12 17v5M8 22h8"/></svg></div>
         <h3>Bhajan Singers</h3>
         <p>Devotional vocalists and groups for satsangs, jagrans and festival evenings.</p>
@@ -494,7 +494,7 @@
       <h2>From WhatsApp message to <span class="accent">showtime.</span></h2>
       <div class="rule"></div>
     </div>
-    <div class="grid g3" style="margin-top:14px;grid-template-columns:repeat(4,1fr);">
+    <div class="grid g4" style="margin-top:14px;">
       <div class="step"><div class="stepno">1</div><h4>Tell Us Your Event</h4><p>Share the date, location, event type and artist(s) you need over WhatsApp.</p></div>
       <div class="step"><div class="stepno">2</div><h4>Get Matched</h4><p>We recommend vetted, background-checked artists that fit your event and budget.</p></div>
       <div class="step"><div class="stepno">3</div><h4>Confirm with 10% Deposit</h4><p>Lock in your date with a 10% advance deposit — the rest is settled on the event day.</p></div>

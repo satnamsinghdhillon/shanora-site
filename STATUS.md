@@ -52,12 +52,31 @@ Grow Shanora's revenue through a professional web presence that converts visitor
     "Adding more artist photos/videos" section for the commands, for reuse
     when more real content arrives.
 
+- **Content trim + responsive fix** (Aug 19 2026, same day, third request):
+  - Removed the "Cultural & Birthday Events" hero stat card and the
+    standalone "Pandit Ji Bookings" card from Category A per user request
+    (pandit ji is still mentioned as part of the "Full Pandal Packages"
+    bundle — just no longer offered as its own booking line).
+  - Fixed a real responsive bug: the 4-step "How It Works" section had
+    `grid-template-columns:repeat(4,1fr)` as an **inline style**, which
+    silently overrode the `.g3`/`.g4` responsive breakpoints (inline
+    styles beat stylesheet rules regardless of media query) — it never
+    collapsed to fewer columns on mobile. Moved it to a proper `.g4` class
+    with 900px/680px breakpoints matching `.g2`/`.g3`.
+  - Fixed a second responsive gap: the nav has more items than
+    `index.html`'s (6 links/buttons vs. 5), and the burger menu only
+    activated below 680px — on tablet-width screens (roughly 680–960px)
+    the full nav row could overflow. Split the burger-menu trigger into
+    its own `@media(max-width:960px)` block, separate from the
+    680px block that still handles phone-specific layout (single-column
+    grids, stacked CTAs, etc.).
+
 ## In Progress
 - Nothing active. Ready for review before deploy.
 
 ## Next Steps
-- Get more real photos/videos for the other categories (dhol-tasha, pandit
-  ji, magicians, mascots, etc.) — they're still SVG icons; the README has
+- Get more real photos/videos for the other categories (dhol-tasha,
+  magicians, mascots, etc.) — they're still SVG icons; the README has
   the exact ffmpeg commands to add them the same way.
 - Review `events.html` copy/pricing-free positioning ("contact for quote" —
   no fixed price list was provided, so none is shown).
