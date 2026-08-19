@@ -1,38 +1,39 @@
-# Shanora Digital — Website
+# Shanora — Website
 
-A single-page, fully responsive marketing website for Shanora Digital
-(social media agency). Built as static files — no build step, no backend.
+Two static marketing pages for Shanora, built as plain HTML/CSS/JS — no
+build step, no backend, no framework.
 
 ## Files
-- `index.html` — the entire website (HTML + CSS + a few lines of JS embedded)
-- `logo.jpeg` — the brand logo (used in the nav, footer and as the favicon)
+- `index.html` — **Shanora Digital**, the social media agency (strategy,
+  content, paid growth). Full page: hero, about, services, pricing,
+  clients, platforms, cross-promo to Shanora Events, contact.
+- `events.html` — **Shanora Events**, the vetted-artist booking vertical for
+  Mumbai cultural events (Jhanki troupes, dhol-tasha, pandit ji, bhajan
+  singers) and kids' birthday parties (magicians, mascots, tattoo artists,
+  emcees, etc). Booking happens entirely via a pre-filled WhatsApp message;
+  the 10% deposit-to-confirm policy is stated in its Terms section.
+- `logo.jpeg` — shared brand logo (nav, footer, favicon on both pages).
+- `clients/` — client logos shown on the `index.html` clients section.
 
-## Deploy to GitHub Pages
+Both pages share the same visual system (gold/navy palette, Plus Jakarta
+Sans) and cross-link to each other (nav item + homepage banner on
+`index.html`; "Digital Marketing" nav link + footer link on `events.html`).
 
-### Option A — upload in the browser (easiest)
-1. Go to https://github.com/new and create a repository, e.g. `shanora-site` (Public).
-2. On the repo page click **Add file → Upload files**, drag in `index.html`
-   and `logo.jpeg`, then **Commit changes**.
-3. Go to **Settings → Pages**. Under *Build and deployment* set
-   **Source = Deploy from a branch**, **Branch = main**, folder **/ (root)**, **Save**.
-4. Wait ~1 minute. Your site will be live at
-   `https://<your-username>.github.io/shanora-site/`
+## Deployment
+Live at **shanoradigital.com** on **Cloudflare Workers** (domain + email
+hosted at Hostinger — see project memory for DNS specifics). Since this is
+a static site with no build step, deploying is just publishing the updated
+files in this folder to the existing Worker/Pages project; no config
+changes are needed to add a new `.html` file.
 
-### Option B — push with git
-```bash
-git remote add origin https://github.com/<your-username>/shanora-site.git
-git branch -M main
-git push -u origin main
-```
-Then do step 3 above to switch Pages on.
+Git remote: `github.com/SatnamCF/shanora-site` (branch `main`).
 
-## Before you go live — quick checklist
-- **Contact form:** the form posts to a placeholder. To make it actually deliver
-  email, create a free form at https://formspree.io (it gives you a URL like
-  `https://formspree.io/f/abcwxyz`) and replace `your-form-id` in the form's
-  `action="..."` inside `index.html`. The WhatsApp and email buttons already work
-  without any setup.
-- **Social links / handles:** update the WhatsApp number / email if they ever change
-  (search `88796 90919` and `shanoradigital@gmail.com` in `index.html`).
-- **Custom domain (optional):** if you buy e.g. `shanoradigital.com`, add it under
-  Settings → Pages → Custom domain.
+## Before you change contact details
+- **WhatsApp number:** currently `+91 88796 90919` on both pages. It appears
+  many times (nav CTA, hero CTA, per-category CTAs, footer) — search for
+  `918879690919` (URL form) and `88796 90919` (display form) across both
+  HTML files if it ever changes.
+- **Email:** `contact@shanoradigital.com`, used as a plain `mailto:` link/
+  form action on both pages — no third-party form service required.
+- **Custom domain:** already configured via Cloudflare — no GitHub Pages
+  setup needed.

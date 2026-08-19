@@ -188,6 +188,14 @@
   .plat b{font-size:16px;}
   .plat span{font-size:13px;color:var(--muted);}
 
+  /* ---------- cross-promo band ---------- */
+  .crossband{background:linear-gradient(155deg,#0B1626,#16314E);border-radius:24px;padding:52px 44px;text-align:center;
+    color:#F0E9D8;position:relative;overflow:hidden;border:1px solid rgba(201,162,75,.25);}
+  .crossband h2{color:#F7F2E4;}
+  .crossband h2 .accent{color:var(--gold-lt);}
+  .crossband .lead{color:#D2CBBB;margin:0 auto;}
+  .crossband .cta-row{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:30px;}
+
   /* ---------- contact ---------- */
   .contact{position:relative;overflow:hidden;color:#F2ECDC;
     background:radial-gradient(700px 460px at 88% 0%, rgba(201,162,75,.16), transparent 60%),
@@ -267,6 +275,7 @@
       <a href="#services" onclick="closeNav()">Services</a>
       <a href="#pricing" onclick="closeNav()">Pricing</a>
       <a href="#clients" onclick="closeNav()">Clients</a>
+      <a href="events.html" onclick="closeNav()">Event Artists</a>
       <a class="btn btn-gold" href="#contact" onclick="closeNav()">Get a Quote</a>
     </nav>
     <button class="burger" aria-label="Menu" onclick="toggleNav()"><span></span><span></span><span></span></button>
@@ -480,6 +489,23 @@
   </div>
 </section>
 
+<!-- ============ EVENTS CROSS-PROMO ============ -->
+<section class="sec soft" id="events-promo">
+  <div class="wrap">
+    <div class="crossband">
+      <div class="glow" style="width:260px;height:260px;background:#C9A24B;top:-70px;right:4%;opacity:.2;"></div>
+      <span class="eyebrow" style="color:var(--gold-lt);">Also From Shanora</span>
+      <h2>Planning a cultural event or a <span class="accent">kids' birthday party?</span></h2>
+      <div class="rule" style="margin-left:auto;margin-right:auto;"></div>
+      <p class="lead">Shanora Events books vetted, background-checked artists across Mumbai — Jhanki troupes and dhol-tasha for your puja, magicians and mascots for your child's party. Standardized pricing, one WhatsApp message to book.</p>
+      <div class="cta-row">
+        <a class="btn btn-gold" href="events.html">Explore Shanora Events
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ CONTACT ============ -->
 <section class="sec contact" id="contact">
   <div class="glow" style="width:300px;height:300px;background:#C9A24B;top:-80px;right:8%;opacity:.25;"></div>
@@ -526,7 +552,7 @@
       </a>
       <div class="foot-links">
         <a href="#about">About</a><a href="#services">Services</a><a href="#pricing">Pricing</a>
-        <a href="#clients">Clients</a><a href="#contact">Contact</a>
+        <a href="#clients">Clients</a><a href="events.html">Event Artists</a><a href="#contact">Contact</a>
       </div>
     </div>
     <div class="foot-bot">

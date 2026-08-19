@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shanora Events — Vetted Artists for Mumbai's Cultural &amp; Birthday Events</title>
+<meta name="description" content="Book background-checked, experienced artists in Mumbai — Jhanki troupes, dhol-tasha, pandit ji &amp; bhajan singers for cultural events, and magicians, mascots &amp; tattoo artists for kids' birthday parties. Standardized pricing, one WhatsApp booking.">
+<link rel="icon" href="logo.jpeg">
+<meta property="og:title" content="Shanora Events — Vetted Artists for Mumbai's Cultural &amp; Birthday Events">
+<meta property="og:description" content="Background-checked, experienced artists for pujas, festivals and kids' parties across Mumbai. Standardized pricing, book on WhatsApp.">
+<meta property="og:image" content="logo.jpeg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --gold:#C9A24B; --gold-lt:#E8C56B; --gold-dp:#A67C2E;
+    --navy:#0B1626; --navy2:#13243C; --navy3:#16314E; --blue:#2C5282;
+    --ink:#13233B; --slate:#586173; --muted:#8A93A3; --line:#ECE6D8;
+    --soft:#FBF8F1; --cream:#FCFAF4; --card:#fff;
+    --marigold:#D9822B; --marigold-lt:#F0B15C;
+    --rose:#C9678A; --rose-lt:#E6A9C0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:"Plus Jakarta Sans",-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);
+    background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{width:100%;max-width:1160px;margin:0 auto;padding:0 24px;}
+  section{scroll-margin-top:80px;}
+
+  /* ---------- buttons ---------- */
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:15px;border-radius:50px;
+    padding:14px 26px;cursor:pointer;border:none;transition:transform .2s ease, box-shadow .2s ease, background .2s ease;white-space:nowrap;}
+  .btn svg{width:18px;height:18px;}
+  .btn-gold{background:linear-gradient(135deg,#E8C56B,#C9A24B);color:#0B1626;box-shadow:0 8px 22px rgba(201,162,75,.35);}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(201,162,75,.45);}
+  .btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4);}
+  .btn-ghost:hover{border-color:var(--gold-lt);color:var(--gold-lt);}
+  .btn-dark{background:var(--navy);color:#fff;}
+  .btn-dark:hover{transform:translateY(-2px);background:var(--navy3);}
+  .btn-sm{padding:10px 20px;font-size:13.5px;}
+  .btn-outline{background:transparent;color:var(--gold-dp);border:1.5px solid rgba(201,162,75,.55);}
+  .btn-outline:hover{background:rgba(201,162,75,.08);}
+
+  /* ---------- navbar ---------- */
+  header{position:sticky;top:0;z-index:100;background:rgba(11,22,38,.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(201,162,75,.18);}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px;}
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand img{width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(201,162,75,.5);}
+  .brand .bn{font-size:19px;font-weight:800;letter-spacing:1.5px;color:#F5EFDE;line-height:1;}
+  .brand .bs{font-size:8px;letter-spacing:3px;color:var(--gold-lt);text-transform:uppercase;margin-top:3px;font-weight:600;}
+  .navlinks{display:flex;align-items:center;gap:28px;}
+  .navlinks a{color:#D6CFC0;font-size:15px;font-weight:500;transition:color .2s;}
+  .navlinks a:hover{color:var(--gold-lt);}
+  .nav .btn{padding:11px 20px;font-size:14px;}
+  .navlinks a.btn-gold{color:#0B1626;}
+  .navlinks a.btn-gold:hover{color:#0B1626;}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
+  .burger span{width:24px;height:2px;background:var(--gold-lt);border-radius:2px;transition:.3s;}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;color:#F5EFDE;overflow:hidden;
+    background:
+      radial-gradient(800px 480px at 82% -8%, rgba(217,130,43,.30), transparent 58%),
+      radial-gradient(760px 580px at -8% 112%, rgba(201,103,138,.30), transparent 55%),
+      linear-gradient(150deg,#070F1C 0%,#0B1626 42%,#10203A 72%,#13283F 100%);}
+  .hero .wrap{padding-top:90px;padding-bottom:80px;position:relative;z-index:2;}
+  .glow{position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;}
+  .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border:1px solid rgba(201,162,75,.45);
+    border-radius:50px;font-size:13px;letter-spacing:1px;text-transform:uppercase;font-weight:600;color:var(--gold-lt);
+    background:rgba(201,162,75,.08);margin-bottom:26px;}
+  .hero h1{font-size:clamp(36px,5.6vw,62px);font-weight:800;line-height:1.08;letter-spacing:-1.3px;max-width:16ch;}
+  .hero h1 .hl{color:var(--gold-lt);}
+  .hero p.sub{font-size:clamp(15px,2vw,18px);color:#D6CFC0;max-width:62ch;margin-top:22px;line-height:1.75;}
+  .hero .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;}
+  .hero .stats{display:flex;flex-wrap:wrap;gap:40px;margin-top:50px;padding-top:28px;border-top:1px solid rgba(201,162,75,.22);}
+  .hero .stat .n{font-size:30px;font-weight:800;color:var(--gold-lt);line-height:1;}
+  .hero .stat .l{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#B9B2A2;margin-top:7px;}
+
+  /* ---------- decorative motif strips ---------- */
+  .motif{height:34px;width:100%;background-repeat:repeat-x;background-position:center;background-size:auto 100%;opacity:.9;}
+  .motif-cultural{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='34' viewBox='0 0 72 34'%3E%3Cg fill='none' stroke='%23D9822B' stroke-width='1.4'%3E%3Ccircle cx='36' cy='17' r='9'/%3E%3Ccircle cx='36' cy='17' r='3.2'/%3E%3Cpath d='M36 4v6M36 24v6M23 17h6M43 17h6M27 8l4 4M45 8l-4 4M27 26l4-4M45 26l-4-4'/%3E%3C/g%3E%3C/svg%3E");}
+  .motif-birthday{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='34' viewBox='0 0 90 34'%3E%3Cpath d='M0 4h90' stroke='%23C9678A' stroke-width='1.4' fill='none'/%3E%3Cg%3E%3Cpolygon points='10,4 20,4 15,20' fill='%23C9A24B'/%3E%3Cpolygon points='34,4 44,4 39,20' fill='%23C9678A'/%3E%3Cpolygon points='58,4 68,4 63,20' fill='%232C5282'/%3E%3Ccircle cx='27' cy='27' r='3' fill='%23E8C56B'/%3E%3Ccircle cx='51' cy='29' r='2.4' fill='%23C9678A'/%3E%3Ccircle cx='75' cy='26' r='3' fill='%232C5282'/%3E%3C/g%3E%3C/svg%3E");}
+
+  /* ---------- section base ---------- */
+  .sec{padding:88px 0;}
+  .sec.soft{background:var(--cream);}
+  .eyebrow{display:inline-block;font-size:13px;letter-spacing:3px;text-transform:uppercase;font-weight:700;color:var(--gold-dp);margin-bottom:12px;}
+  .eyebrow.rose{color:var(--rose);}
+  .sec h2{font-size:clamp(27px,3.8vw,40px);font-weight:800;letter-spacing:-.6px;line-height:1.14;}
+  .sec h2 .accent{color:var(--gold-dp);}
+  .sec h2 .accent.rose{color:var(--rose);}
+  .rule{width:60px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--gold-dp),var(--gold-lt));margin:16px 0 26px;}
+  .rule.rose{background:linear-gradient(90deg,var(--rose),var(--rose-lt));}
+  .lead{font-size:17px;color:var(--slate);max-width:65ch;line-height:1.75;}
+  .center{text-align:center;}
+  .center .rule{margin-left:auto;margin-right:auto;}
+  .center .lead{margin-left:auto;margin-right:auto;}
+
+  /* ---------- cards grid ---------- */
+  .grid{display:grid;gap:22px;}
+  .g2{grid-template-columns:repeat(2,1fr);}
+  .g3{grid-template-columns:repeat(3,1fr);}
+  .svc{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;position:relative;overflow:hidden;
+    transition:transform .25s ease, box-shadow .25s ease;}
+  .svc::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--gold-dp),var(--gold-lt));}
+  .svc.rose::before{background:linear-gradient(90deg,var(--rose),var(--rose-lt));}
+  .svc:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(40,40,30,.10);}
+  .svc .ic{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+    background:linear-gradient(145deg,#FBF1D8,#F1DEAC);color:var(--gold-dp);}
+  .svc.rose .ic{background:linear-gradient(145deg,#F7E3EB,#EFC6D6);color:var(--rose);}
+  .svc .ic svg{width:26px;height:26px;}
+  .svc h3{font-size:17.5px;font-weight:700;margin-bottom:8px;}
+  .svc p{font-size:14.5px;color:var(--slate);}
+
+  /* ---------- season strip ---------- */
+  .seasons{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px;}
+  .season{font-size:13px;font-weight:700;color:var(--marigold);background:rgba(217,130,43,.1);border:1px solid rgba(217,130,43,.35);
+    border-radius:50px;padding:8px 16px;}
+
+  /* ---------- category CTA banner ---------- */
+  .catcta{margin-top:40px;border-radius:18px;padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+  .catcta.gold{background:linear-gradient(155deg,#0B1626,#16314E);border:1px solid rgba(201,162,75,.3);}
+  .catcta.pink{background:linear-gradient(155deg,#25101A,#3A1626);border:1px solid rgba(201,103,138,.35);}
+  .catcta p{color:#EDE7D8;font-size:15px;max-width:52ch;}
+  .catcta.pink p{color:#F2E4EA;}
+
+  /* ---------- trust ---------- */
+  .trustbar{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;}
+  .tbadge{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--navy);background:var(--soft);
+    border:1px solid var(--line);border-radius:50px;padding:8px 15px;}
+  .tbadge svg{width:15px;height:15px;color:var(--gold-dp);}
+
+  /* ---------- process ---------- */
+  .step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 22px;text-align:center;}
+  .stepno{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;
+    font-weight:800;font-size:18px;color:#0B1626;background:linear-gradient(145deg,#E8C56B,#C9A24B);}
+  .step h4{font-size:17px;font-weight:700;margin-bottom:6px;}
+  .step p{font-size:13.5px;color:var(--slate);}
+
+  /* ---------- terms ---------- */
+  .terms-box{background:linear-gradient(165deg,#0B1626,#16314E);border-radius:22px;padding:38px;color:#F0E9D8;
+    border:1px solid rgba(201,162,75,.3);}
+  .terms-box .k{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-lt);font-weight:700;margin-bottom:14px;}
+  .terms-box .headline{font-size:24px;font-weight:800;margin-bottom:6px;}
+  .terms-box .headline b{color:var(--gold-lt);}
+  .terms-list{list-style:none;margin-top:24px;display:grid;gap:16px;}
+  .terms-list li{display:flex;gap:14px;align-items:flex-start;font-size:15px;line-height:1.6;color:#E5DFCE;}
+  .terms-list .tn{flex:0 0 30px;width:30px;height:30px;border-radius:9px;background:rgba(201,162,75,.16);color:var(--gold-lt);
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;}
+  .terms-note{margin-top:22px;padding-top:20px;border-top:1px solid rgba(201,162,75,.22);font-size:13.5px;color:#B9B2A2;line-height:1.6;}
+
+  /* ---------- contact ---------- */
+  .contact{position:relative;overflow:hidden;color:#F2ECDC;
+    background:radial-gradient(700px 460px at 88% 0%, rgba(217,130,43,.16), transparent 60%),
+      linear-gradient(150deg,#070F1C,#0F2138 55%,#16314E);}
+  .contact h2{color:#F7F2E4;}
+  .contact h2 .accent{color:var(--gold-lt);}
+  .contact .lead{color:#D2CBBB;margin:0 auto;}
+  .contact .cta-row{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:32px;}
+  .cmethods{margin-top:34px;display:flex;justify-content:center;flex-wrap:wrap;gap:32px;}
+  .cmethod{display:flex;align-items:center;gap:13px;}
+  .cmethod .ci{width:44px;height:44px;border-radius:12px;background:rgba(201,162,75,.16);display:flex;align-items:center;justify-content:center;flex:0 0 44px;}
+  .cmethod .ci svg{width:19px;height:19px;stroke:var(--gold-lt);}
+  .cmethod small{display:block;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#A79F8C;text-align:left;}
+  .cmethod b{font-size:16px;font-weight:600;color:#F2ECDC;}
+
+  /* ---------- footer ---------- */
+  footer{background:#070F1C;color:#9AA2AE;padding:54px 0 30px;}
+  .foot-top{display:flex;justify-content:space-between;align-items:flex-start;gap:30px;flex-wrap:wrap;
+    padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.08);}
+  .foot-brand{display:flex;align-items:center;gap:13px;}
+  .foot-brand img{width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(201,162,75,.5);}
+  .foot-brand .bn{font-size:20px;font-weight:800;letter-spacing:1.5px;color:#F5EFDE;}
+  .foot-brand .bs{font-size:9px;letter-spacing:3px;color:var(--gold-lt);text-transform:uppercase;font-weight:600;margin-top:3px;}
+  .foot-links{display:flex;gap:26px;flex-wrap:wrap;}
+  .foot-links a{font-size:14px;color:#B7BEC8;transition:color .2s;}
+  .foot-links a:hover{color:var(--gold-lt);}
+  .foot-bot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:22px;font-size:13px;}
+  .foot-bot a{color:var(--gold-lt);}
+  .foot-cross{margin-top:16px;font-size:13px;color:#9AA2AE;}
+  .foot-cross a{color:var(--gold-lt);font-weight:600;}
+
+  /* ---------- responsive ---------- */
+  @media(max-width:900px){
+    .g3{grid-template-columns:repeat(2,1fr);}
+    .terms-box{padding:28px;}
+  }
+  @media(max-width:680px){
+    .navlinks{position:absolute;top:72px;left:0;right:0;background:rgba(11,22,38,.98);flex-direction:column;
+      gap:0;padding:10px 0;border-bottom:1px solid rgba(201,162,75,.18);max-height:0;overflow:hidden;transition:max-height .3s ease;}
+    .navlinks.open{max-height:460px;}
+    .navlinks a{width:100%;padding:14px 24px;}
+    .navlinks .btn{margin:10px 24px;width:calc(100% - 48px);justify-content:center;}
+    .burger{display:flex;}
+    .sec{padding:60px 0;}
+    .hero .wrap{padding-top:56px;padding-bottom:64px;}
+    .g2,.g3{grid-template-columns:1fr;}
+    .hero .stats{gap:22px;}
+    .hero .stat .n{font-size:24px;}
+    .hero .cta-row{flex-direction:column;align-items:stretch;}
+    .hero .cta-row .btn{justify-content:center;}
+    .catcta{flex-direction:column;align-items:stretch;text-align:center;}
+    .cmethods{gap:20px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <img src="logo.jpeg" alt="Shanora Events logo">
+      <div><div class="bn">SHANORA</div><div class="bs">Events</div></div>
+    </a>
+    <nav class="navlinks" id="nav">
+      <a href="index.html" onclick="closeNav()">Digital Marketing</a>
+      <a href="#trust" onclick="closeNav()">Why Us</a>
+      <a href="#cultural" onclick="closeNav()">Cultural Events</a>
+      <a href="#birthday" onclick="closeNav()">Birthday Parties</a>
+      <a href="#terms" onclick="closeNav()">Terms</a>
+      <a class="btn btn-gold" href="https://wa.me/918879690919?text=Hi%20Shanora%20Events%2C%20I'd%20like%20to%20enquire%20about%20booking%20a%20vetted%20artist%20for%20my%20event.%20Could%20you%20share%20availability%20and%20pricing%3F" target="_blank" rel="noopener" onclick="closeNav()">Book on WhatsApp</a>
+    </nav>
+    <button class="burger" aria-label="Menu" onclick="toggleNav()"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="glow" style="width:340px;height:340px;background:#D9822B;top:-60px;right:6%;"></div>
+  <div class="glow" style="width:300px;height:300px;background:#C9678A;bottom:-80px;left:-4%;opacity:.35;"></div>
+  <div class="wrap">
+    <span class="pill">★ Mumbai's Vetted Artist Network</span>
+    <h1>Book vetted performers for your <span class="hl">cultural events &amp; birthday parties.</span></h1>
+    <p class="sub">Shanora Events connects you with background-checked, experienced artists across Mumbai — from Jhanki troupes and dhol-tasha groups for your puja or pandal, to magicians and mascots for your child's birthday. One platform, standardized pricing, zero last-minute surprises.</p>
+    <div class="cta-row">
+      <a class="btn btn-gold" href="https://wa.me/918879690919?text=Hi%20Shanora%20Events%2C%20I'd%20like%20to%20enquire%20about%20booking%20a%20vetted%20artist%20for%20my%20event.%20Could%20you%20share%20availability%20and%20pricing%3F" target="_blank" rel="noopener">Book on WhatsApp
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-ghost" href="#cultural">See What We Offer</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="n">100%</div><div class="l">Background-Checked Artists</div></div>
+      <div class="stat"><div class="n">2</div><div class="l">Cultural &amp; Birthday Events</div></div>
+      <div class="stat"><div class="n">10%</div><div class="l">Deposit to Confirm Booking</div></div>
+      <div class="stat"><div class="n">Mumbai</div><div class="l">Based &amp; Focused</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST ============ -->
+<section class="sec" id="trust">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Why Book Through Us</span>
+      <h2>Standardized pricing. Verified artists. <span class="accent">Zero guesswork.</span></h2>
+      <div class="rule"></div>
+      <p class="lead" style="margin-bottom:42px;">Booking a performer directly off Instagram or a referral is a gamble on price, punctuality and quality. We remove the risk.</p>
+    </div>
+    <div class="grid g3">
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Vetted &amp; Background-Checked</h3>
+        <p>Every artist on our roster is personally screened — identity verified, background checked, and performance-tested before they're ever offered to a client.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M8.5 13.5L7 22l5-3 5 3-1.5-8.5"/></svg></div>
+        <h3>Genuinely Experienced</h3>
+        <p>Professionals with real stage and event experience — not last-minute freelancers. Authentic costumes, rehearsed performances, consistent quality.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.6 2H4a2 2 0 0 0-2 2v8.6a2 2 0 0 0 .6 1.4l9 9a2 2 0 0 0 2.8 0l7.6-7.6a2 2 0 0 0 0-2.8l-9-9A2 2 0 0 0 12.6 2z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></div>
+        <h3>Transparent Pricing</h3>
+        <p>Standardized package pricing shared upfront on WhatsApp — no hidden fees and no random last-minute price jumps once you've committed.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></svg></div>
+        <h3>Punctual &amp; Professional</h3>
+        <p>We guarantee punctuality, professional costuming and performance quality on the day — artists arrive ready, not rushing to get ready.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 22 8.5 12 15 2 8.5"/><polyline points="2 15.5 12 22 22 15.5"/><polyline points="2 12 12 18.5 22 12"/></svg></div>
+        <h3>One-Stop Shop</h3>
+        <p>Book a Jhanki troupe for the afternoon pandal and a magician for the evening birthday party — from the same conversation, on the same platform.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 12.6L11.4 21.8a2 2 0 0 1-2.8 0L2.2 15.4a2 2 0 0 1 0-2.8L11.4 3.4A2 2 0 0 1 12.8 3H19a2 2 0 0 1 2 2v6.2a2 2 0 0 1-.4 1.4z"/><circle cx="15.5" cy="8.5" r="1.5"/></svg></div>
+        <h3>Book in Minutes</h3>
+        <p>No sign-ups or long forms. Tell us your date, event and budget on WhatsApp and we'll come back with matched artists the same day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATEGORY A: CULTURAL ============ -->
+<section class="sec soft" id="cultural">
+  <div class="motif motif-cultural" style="margin-bottom:44px;"></div>
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Category A · Traditional &amp; Cultural Events</span>
+      <h2>Authentic artists for pujas, <span class="accent">pandals &amp; festivals.</span></h2>
+      <div class="rule"></div>
+      <p class="lead" style="margin-bottom:20px;">Religious and cultural bookings for homes, housing societies, pandals and weddings — performed with the costumes, discipline and devotion these traditions deserve.</p>
+      <div class="seasons">
+        <span class="season">Janmashtami</span>
+        <span class="season">Ganesh Chaturthi</span>
+        <span class="season">Navratri</span>
+        <span class="season">Diwali</span>
+        <span class="season">Wedding Season</span>
+      </div>
+    </div>
+    <div class="grid g3" style="margin-top:42px;">
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V10l8-6 8 6v11"/><path d="M9 21v-6h6v6"/></svg></div>
+        <h3>Jhanki Troupes</h3>
+        <p>Radha-Krishna, Shiv-Parvati, Hanuman Ji and Ram Darbar tableaux, in full costume and makeup, for pandals, processions and home pujas.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="7" rx="7" ry="3"/><path d="M5 7v10a7 3 0 0 0 14 0V7"/></svg></div>
+        <h3>Dhol-Tasha Groups</h3>
+        <p>High-energy drum troupes for Ganpati visarjan processions, Navratri nights and wedding baraats.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
+        <h3>Shehnai Players</h3>
+        <p>Traditional wind musicians for weddings, grihapravesh and other auspicious ceremonies.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c1.5 2 1.5 4 0 5.5C10.5 6 10.5 4 12 2z"/><path d="M4 14c0-1 .5-2 2-2h12c1.5 0 2 1 2 2 0 3.5-3.5 6-8 6s-8-2.5-8-6z"/></svg></div>
+        <h3>Pandit Ji Bookings</h3>
+        <p>Experienced, verified priests for puja, havan and religious ceremonies — briefed on your family's specific rituals in advance.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><path d="M12 17v5M8 22h8"/></svg></div>
+        <h3>Bhajan Singers</h3>
+        <p>Devotional vocalists and groups for satsangs, jagrans and festival evenings.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 9c1-1 2-1.5 4-1.5S15 8 16 9M8 15c1 1 2 1.5 4 1.5s3-.5 4-1.5"/></svg></div>
+        <h3>Full Pandal Packages</h3>
+        <p>Combine a Jhanki troupe, dhol-tasha and a pandit ji into a single coordinated booking for your society's celebration.</p>
+      </div>
+    </div>
+    <div class="catcta gold">
+      <p><b>Planning Ganpati, Navratri or a wedding function?</b> Tell us your date and we'll put together a matched lineup within the day.</p>
+      <a class="btn btn-gold btn-sm" href="https://wa.me/918879690919?text=Hi%20Shanora%20Events%2C%20I'd%20like%20to%20book%20a%20cultural%2Freligious%20artist%20%28Jhanki%20troupe%2C%20dhol-tasha%2C%20pandit%20ji%2C%20etc.%29%20for%20my%20event.%20Could%20you%20share%20availability%20and%20pricing%3F" target="_blank" rel="noopener">Enquire on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATEGORY B: BIRTHDAY ============ -->
+<section class="sec" id="birthday">
+  <div class="motif motif-birthday" style="margin-bottom:44px;"></div>
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow rose">Category B · Kids &amp; Birthday Events</span>
+      <h2>Performers &amp; stations that make <span class="accent rose">birthdays unforgettable.</span></h2>
+      <div class="rule rose"></div>
+      <p class="lead" style="margin-bottom:20px;">Screened, kid-friendly performers and activity stations that keep children (and parents) entertained from start to finish.</p>
+    </div>
+    <div class="grid g3" style="margin-top:42px;">
+      <div class="svc rose">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="4" width="10" height="9" rx="1"/><path d="M3 17h18l-1.5 3h-15z"/></svg></div>
+        <h3>Magicians</h3>
+        <p>Professional close-up and stage magic that keeps kids (and adults) genuinely spellbound.</p>
+      </div>
+      <div class="svc rose">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1"/><circle cx="15" cy="10" r="1"/><path d="M8 15c1.3 1.3 2.7 2 4 2s2.7-.7 4-2"/></svg></div>
+        <h3>Mascot &amp; Cartoon Characters</h3>
+        <p>Favourite costumed characters for entrances, photo-ops and dance-offs with the birthday child.</p>
+      </div>
+      <div class="svc rose">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16"/><path d="M7 4v3M12 4v3M17 4v3"/><circle cx="12" cy="14" r="4"/><path d="M9 18l-2 3M15 18l2 3"/></svg></div>
+        <h3>Puppet Show Artists</h3>
+        <p>Interactive puppet performances written for young audiences, with plenty of audience participation.</p>
+      </div>
+      <div class="svc rose">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"/><path d="M9 10h.01M15 10h.01"/><path d="M9 15c1 .7 2 .7 3 .7s2 0 3-.7"/><path d="M19 6l3-1-1 3"/></svg></div>
+        <h3>Ventriloquists</h3>
+        <p>Comedic voice-throwing acts that blend stand-up energy with puppetry — a crowd favourite for mixed-age parties.</p>
+      </div>
+      <div class="svc rose">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg></div>
+        <h3>Tattoo Artists</h3>
+        <p>Safe, skin-friendly temporary tattoo stations with designs kids actually want.</p>
+      </div>
+      <div class="svc rose">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a6 6 0 0 1 6 6c0 3.5-2.7 6.5-5 8l1 5-2-1-2 1 1-5c-2.3-1.5-5-4.5-5-8a6 6 0 0 1 6-6z"/></svg></div>
+        <h3>Balloon Sculptors</h3>
+        <p>Twisted balloon art and sculptures made to order, live at the party.</p>
+      </div>
+      <div class="svc rose">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6l1 4-1 2h1a2 2 0 0 1 2 2l-1 9a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2l-1-9a2 2 0 0 1 2-2h1l-1-2z"/></svg></div>
+        <h3>Pottery Makers</h3>
+        <p>Hands-on pottery and clay stations that turn playtime into a take-home keepsake.</p>
+      </div>
+      <div class="svc rose">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></div>
+        <h3>Caricature Artists</h3>
+        <p>Quick, funny caricature sketches that double up as party favours guests take home.</p>
+      </div>
+      <div class="svc rose">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10v4a1 1 0 0 0 1 1h2l5 4V5L6 9H4a1 1 0 0 0-1 1z"/><path d="M16 8a4 4 0 0 1 0 8"/><path d="M19 5a8 8 0 0 1 0 14"/></svg></div>
+        <h3>Game Coordinators / Emcees</h3>
+        <p>Energetic hosts who run party games, keep kids engaged, and take the pressure off the parents.</p>
+      </div>
+    </div>
+    <div class="catcta pink">
+      <p><b>Planning a kid's birthday party?</b> Tell us the age group, theme and budget — we'll suggest a lineup that fits.</p>
+      <a class="btn btn-gold btn-sm" href="https://wa.me/918879690919?text=Hi%20Shanora%20Events%2C%20I'd%20like%20to%20book%20a%20performer%20%28magician%2C%20mascot%2C%20tattoo%20artist%2C%20etc.%29%20for%20my%20kid's%20birthday%20party.%20Could%20you%20share%20availability%20and%20pricing%3F" target="_blank" rel="noopener">Enquire on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="sec soft" id="process">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">How It Works</span>
+      <h2>From WhatsApp message to <span class="accent">showtime.</span></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="grid g3" style="margin-top:14px;grid-template-columns:repeat(4,1fr);">
+      <div class="step"><div class="stepno">1</div><h4>Tell Us Your Event</h4><p>Share the date, location, event type and artist(s) you need over WhatsApp.</p></div>
+      <div class="step"><div class="stepno">2</div><h4>Get Matched</h4><p>We recommend vetted, background-checked artists that fit your event and budget.</p></div>
+      <div class="step"><div class="stepno">3</div><h4>Confirm with 10% Deposit</h4><p>Lock in your date with a 10% advance deposit — the rest is settled on the event day.</p></div>
+      <div class="step"><div class="stepno">4</div><h4>Sit Back &amp; Enjoy</h4><p>Our artists arrive on time, in full costume, ready to perform.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TERMS ============ -->
+<section class="sec" id="terms">
+  <div class="wrap">
+    <div class="terms-box">
+      <div class="k">Booking Policy</div>
+      <div class="headline">Confirming a date is simple: <b>a 10% deposit locks it in.</b></div>
+      <ul class="terms-list">
+        <li><span class="tn">1</span><span>A booking is confirmed only once a <b>10% advance deposit</b> of the total package value is received.</span></li>
+        <li><span class="tn">2</span><span>The deposit is deducted from your final bill — it is <b>not</b> an additional charge on top of the package price.</span></li>
+        <li><span class="tn">3</span><span>The remaining balance is payable on or before the event day, prior to the performance.</span></li>
+        <li><span class="tn">4</span><span>Dates are held on a first-confirmed basis — until the deposit is received, a date is not guaranteed.</span></li>
+      </ul>
+      <div class="terms-note">Detailed terms — including rescheduling, cancellation and travel policies for your specific booking — are shared and agreed in writing over WhatsApp at the time of booking confirmation.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="sec contact center" id="contact">
+  <div class="glow" style="width:300px;height:300px;background:#D9822B;top:-80px;right:8%;opacity:.25;"></div>
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--gold-lt);">Ready When You Are</span>
+    <h2>Let's book your <span class="accent">next event.</span></h2>
+    <div class="rule"></div>
+    <p class="lead">Message us your date, location and what you need — cultural artist, birthday performer, or both. We'll come back with matched, vetted artists and clear pricing.</p>
+    <div class="cta-row">
+      <a class="btn btn-gold" href="https://wa.me/918879690919?text=Hi%20Shanora%20Events%2C%20I'd%20like%20to%20enquire%20about%20booking%20a%20vetted%20artist%20for%20my%20event.%20Could%20you%20share%20availability%20and%20pricing%3F" target="_blank" rel="noopener">Book on WhatsApp
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="cmethods">
+      <a class="cmethod" href="https://wa.me/918879690919" target="_blank" rel="noopener">
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></div>
+        <div><small>WhatsApp</small><b>+91 88796 90919</b></div>
+      </a>
+      <a class="cmethod" href="mailto:contact@shanoradigital.com">
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></div>
+        <div><small>Email</small><b>contact@shanoradigital.com</b></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <a class="foot-brand" href="#top">
+        <img src="logo.jpeg" alt="Shanora Events">
+        <div><div class="bn">SHANORA</div><div class="bs">Events · Cultural &amp; Birthday Artists</div></div>
+      </a>
+      <div class="foot-links">
+        <a href="#trust">Why Us</a><a href="#cultural">Cultural Events</a><a href="#birthday">Birthday Parties</a>
+        <a href="#terms">Terms</a><a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© <span id="yr">2026</span> Shanora. All rights reserved.</span>
+      <span><a href="mailto:contact@shanoradigital.com">contact@shanoradigital.com</a> &nbsp;·&nbsp; <a href="https://wa.me/918879690919" target="_blank" rel="noopener">+91 88796 90919</a></span>
+    </div>
+    <div class="foot-cross">Looking for social media growth instead? Visit <a href="index.html">Shanora Digital</a>.</div>
+  </div>
+</footer>
+
+<script>
+  function toggleNav(){document.getElementById('nav').classList.toggle('open');}
+  function closeNav(){document.getElementById('nav').classList.remove('open');}
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
