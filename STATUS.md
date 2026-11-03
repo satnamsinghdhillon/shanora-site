@@ -116,7 +116,6 @@ Grow Shanora's revenue through a professional web presence that converts visitor
 - Nothing active. Everything is pushed; visual check pending (see
   Next Steps).
 ## Next Steps
-  that she is shown as founder.
 - Visually confirm the new Jhanki Troupes crossfade gallery in a browser
   (opened `events.html` locally for manual check — Claude in Chrome isn't
   connected this session, so it wasn't screenshotted automatically).
