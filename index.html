@@ -127,6 +127,29 @@
     font-weight:800;font-size:18px;color:#0B1626;background:linear-gradient(145deg,#E8C56B,#C9A24B);}
   .step h4{font-size:17px;font-weight:700;margin-bottom:6px;}
   .step p{font-size:13.5px;color:var(--slate);}
+  .center-lead{margin:0 auto 30px;text-align:center;}
+  .step{display:flex;flex-direction:column;}
+  .step .get{margin-top:auto;padding-top:14px;border-top:1px dashed var(--line);font-size:13px;color:var(--ink);text-align:left;}
+  .step p{margin-bottom:16px;}
+  .step .get b{display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-dp);margin-bottom:3px;}
+  .assure{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:30px;background:linear-gradient(155deg,#0B1626,#16314E);
+    border-radius:18px;padding:26px 28px;color:#F0E9D8;}
+  .assure b{display:block;font-size:15px;color:var(--gold-lt);margin-bottom:4px;}
+  .assure span{font-size:13px;opacity:.85;line-height:1.5;}
+
+  /* ---------- founder ---------- */
+  .founder{display:grid;grid-template-columns:300px 1fr;gap:44px;align-items:center;margin-top:64px;padding:36px;
+    background:var(--cream);border:1px solid var(--line);border-radius:24px;}
+  .fphoto{position:relative;aspect-ratio:4/5;border-radius:20px;overflow:hidden;
+    background:linear-gradient(145deg,#E8C56B,#C9A24B);display:flex;align-items:center;justify-content:center;
+    box-shadow:0 18px 40px rgba(40,40,30,.14);}
+  .fphoto .fmono{font-size:72px;font-weight:800;color:#0B1626;}
+  .fphoto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .founder h3{font-size:clamp(24px,3vw,32px);font-weight:800;letter-spacing:-.4px;line-height:1.15;}
+  .founder .role{font-size:13px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;color:var(--gold-dp);margin:6px 0 16px;}
+  .founder p{font-size:16px;color:var(--slate);line-height:1.75;margin-bottom:14px;max-width:62ch;}
+  .founder .fquote{border-left:3px solid var(--gold);padding-left:16px;font-weight:600;color:var(--ink);font-size:17px;}
+  .founder .btn{margin-top:8px;}
 
   /* ---------- pricing ---------- */
   .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch;}
@@ -236,6 +259,9 @@
   /* ---------- responsive ---------- */
   @media(max-width:900px){
     .about-grid{grid-template-columns:1fr;gap:36px;}
+    .founder{grid-template-columns:1fr;padding:26px;gap:28px;}
+    .fphoto{max-width:300px;width:100%;margin:0 auto;}
+    .assure{grid-template-columns:repeat(2,1fr);}
     .g3{grid-template-columns:repeat(2,1fr);}
     .g4{grid-template-columns:repeat(2,1fr);}
     .plans{grid-template-columns:1fr;max-width:440px;margin:0 auto;}
@@ -251,7 +277,7 @@
     .burger{display:flex;}
     .sec{padding:64px 0;}
     .hero .wrap{padding-top:60px;padding-bottom:70px;}
-    .g3,.g4,.g2{grid-template-columns:1fr;}
+    .g3,.g4,.g2,.assure{grid-template-columns:1fr;}
     .statcards{grid-template-columns:1fr 1fr;}
     .hero .stats{gap:24px;}
     .hero .stat .n{font-size:26px;}
@@ -339,6 +365,23 @@
         </div>
       </div>
     </div>
+
+    <!-- Founder -->
+    <div class="founder" id="founder">
+      <div class="fphoto">
+        <span class="fmono" aria-hidden="true">SN</span>
+        <img src="assets/founder/shankhani-narang.jpg" alt="Shankhani Narang, founder of Shanora Digital" loading="lazy" onerror="this.remove()">
+      </div>
+      <div>
+        <span class="eyebrow">Meet the Founder</span>
+        <h3>Shankhani Narang</h3>
+        <div class="role">Founder, Shanora</div>
+        <p>Shankhani started Shanora with a simple belief: social media should be run like a business, not a guessing game. She knows the creator side first-hand, having built her own audience on Instagram as <b>@miss.narang</b>, and brings that same instinct for what actually connects with people to every brand we work with.</p>
+        <p>She leads the studio's strategy and keeps a close eye on every client's work, so each brand gets a plan shaped around its own voice, audience and goals.</p>
+        <p class="fquote">“Every brand has a story worth telling. Our job is to tell it consistently, and to prove it's working with real numbers.”</p>
+        <a class="btn btn-dark" href="https://www.instagram.com/miss.narang/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>Follow @miss.narang</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -370,11 +413,18 @@
       <h2>A simple, proven <span class="accent">4-step process.</span></h2>
       <div class="rule"></div>
     </div>
+    <p class="lead center-lead">No guesswork and no black box. You always know what we're doing, why we're doing it, and what it's delivering.</p>
     <div class="grid g4" style="margin-top:14px;">
-      <div class="step"><div class="stepno">1</div><h4>Discover</h4><p>We learn your brand, audience, competitors and goals.</p></div>
-      <div class="step"><div class="stepno">2</div><h4>Strategise</h4><p>We design a tailored content &amp; growth roadmap.</p></div>
-      <div class="step"><div class="stepno">3</div><h4>Create &amp; Publish</h4><p>We produce, schedule and post on a steady cadence.</p></div>
-      <div class="step"><div class="stepno">4</div><h4>Review &amp; Optimise</h4><p>We measure results and refine for compounding growth.</p></div>
+      <div class="step"><div class="stepno">1</div><h4>Discover</h4><p>We dig into your brand, audience, competitors and goals before a single post is planned.</p><div class="get"><b>You get</b>A clear brand &amp; competitor snapshot with agreed goals.</div></div>
+      <div class="step"><div class="stepno">2</div><h4>Strategise</h4><p>We turn those insights into a content and growth roadmap built for your brand, never a template.</p><div class="get"><b>You get</b>A platform-wise content calendar you approve first.</div></div>
+      <div class="step"><div class="stepno">3</div><h4>Create &amp; Publish</h4><p>Our designers and editors produce, schedule and post on a steady cadence, and we handle comments and DMs.</p><div class="get"><b>You get</b>Consistent, on-brand posting without chasing us.</div></div>
+      <div class="step"><div class="stepno">4</div><h4>Review &amp; Optimise</h4><p>We measure what worked, drop what didn't and double down, so results compound month after month.</p><div class="get"><b>You get</b>A plain-English monthly report with next steps.</div></div>
+    </div>
+    <div class="assure">
+      <div><b>You stay in control</b><span>Nothing goes live that doesn't fit your brand.</span></div>
+      <div><b>One point of contact</b><span>Reach us directly on WhatsApp, no ticket queues.</span></div>
+      <div><b>Honest reporting</b><span>Real numbers every month, good or bad.</span></div>
+      <div><b>No lock-in surprises</b><span>Transparent monthly plans, no hidden fees.</span></div>
     </div>
   </div>
 </section>
@@ -457,7 +507,6 @@
     </div>
     <div class="subhead">Businesses &amp; Institutions</div>
     <div class="grid g3">
-      <div class="client"><img class="clogo fit" src="clients/coachfoundation.png" alt="Coach Foundation logo" loading="lazy"><div><b>Coach Foundation</b><span>Coaching &amp; Education</span></div></div>
       <div class="client"><img class="clogo" src="clients/xoxohealthycafe.jpg" alt="XOXO Healthy Café logo" loading="lazy"><div><b>XOXO Healthy Café</b><span>Food &amp; Beverage</span></div></div>
       <div class="client"><img class="clogo fit" src="clients/valiacollege.jpg" alt="Valia College logo" loading="lazy"><div><b>Valia College of Arts, Science &amp; Commerce</b><span>Education</span><span class="badge">6 accounts managed</span></div></div>
     </div>

@@ -10,7 +10,7 @@ Grow Shanora's revenue through a professional web presence that converts visitor
 ## Done
 - Single-page responsive site (`index.html`) for Shanora Digital: hero, about, services, process, pricing (USD/INR toggle), clients, platforms, contact (WhatsApp + mailto form).
 - Deployed on Cloudflare Workers; domain + email on Hostinger (see memory: shanora-site-hosting).
-- Git repo initialized, pushed to `github.com/SatnamCF/shanora-site`.
+- Git repo initialized, pushed to `github.com/satnamsinghdhillon/shanora-site`.
 
 - Built `events.html` — **Shanora Events** page: hero, 6-card trust section
   (background-checked, experienced, transparent pricing, punctual, one-stop
@@ -83,15 +83,48 @@ Grow Shanora's revenue through a professional web presence that converts visitor
   No DOM reorder, so screen readers/print still hit text before video —
   intentional, this was a visual-only fix.
 
+- **Jhanki Troupes photo gallery** (Aug 20 2026, follow-up request: "add
+  these images in the cultural event section, like you've already added one
+  image there"). Three more real photos arrived in `../artist content/`
+  (two different bookings, distinct from the one already live) plus a
+  second video and 4 extracted frames. Optimized the 3 new photos with
+  ffmpeg into `assets/artists/radha-krishna-jhanki-2.jpg` / `-3.jpg` /
+  `-4.jpg` (same `scale=900:-1 -q:v 4` command as before) and turned the
+  Jhanki Troupes card's single static photo into a 4-image pure-CSS
+  crossfade gallery (no JS) — badge text pluralized to "Real Shanora
+  Bookings" since it now spans three separate real events, not one.
+  README's "Adding more artist photos/videos" section documents the
+  gallery pattern and how to extend it to a 5th photo. The new video +
+  frames were left unused (request was specifically for images) — flagged
+  in README as available for a future hero-video swap or second gallery.
+
+- **Homepage revamp** (Nov 3 2026): removed Coach Foundation from the clients
+  list (and deleted its logo); rewrote "How We Work" with fuller step copy,
+  a "You get" deliverable per step, and a 4-point assurance strip; added a
+  "Meet the Founder" block (Shankhani Narang, @miss.narang) under About.
+  Repo moved to `github.com/satnamsinghdhillon/shanora-site`; Cloudflare
+  reconnected to it.
+
 ## In Progress
-- Nothing active. Committed and pushed; ready for live verification.
+- Nothing active. Not yet committed/pushed — visual check pending (see
+  Next Steps).
 
 ## Next Steps
+- Add the founder photo at `assets/founder/shankhani-narang.jpg` (initials
+  placeholder shows until then) and confirm the founder intro wording.
+- Decide whether "Miss Narang" should stay in the Creators client list now
+  that she is shown as founder.
+- Visually confirm the new Jhanki Troupes crossfade gallery in a browser
+  (opened `events.html` locally for manual check — Claude in Chrome isn't
+  connected this session, so it wasn't screenshotted automatically).
 - Verify `shanoradigital.com/events` on an actual mobile viewport
   post-deploy — confirm the video renders above the hero text/CTA.
 - Get more real photos/videos for the other categories (dhol-tasha,
   magicians, mascots, etc.) — they're still SVG icons; the README has
   the exact ffmpeg commands to add them the same way.
+- Decide whether to use the second real video (`../artist content/WhatsApp
+  Video 2026-08-19 at 3.13.55 PM.mp4`) — hero swap, second gallery, or
+  leave unused.
 - Review `events.html` copy/pricing-free positioning ("contact for quote" —
   no fixed price list was provided, so none is shown).
 

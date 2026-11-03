@@ -1,7 +1,7 @@
 # Session Handoff — Shanora Website
 
 **Date:** 2026-08-19
-**Repo:** `C:\Projects\Shanora\website` — GitHub `SatnamCF/shanora-site` (branch `main`)
+**Repo:** `C:\Projects\Shanora\website` — GitHub `satnamsinghdhillon/shanora-site` (branch `main`)
 
 ## What We Were Doing
 Follow-up session on `events.html` (the Shanora Events vertical, see prior
