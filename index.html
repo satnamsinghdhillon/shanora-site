@@ -284,13 +284,15 @@
     .plan.feat{order:-1;}
     .contact-grid{grid-template-columns:1fr;gap:36px;}
   }
-  @media(max-width:680px){
+  @media(max-width:960px){
     .navlinks{position:absolute;top:72px;left:0;right:0;background:rgba(11,22,38,.98);flex-direction:column;
       gap:0;padding:10px 0;border-bottom:1px solid rgba(201,162,75,.18);max-height:0;overflow:hidden;transition:max-height .3s ease;}
-    .navlinks.open{max-height:420px;}
+    .navlinks.open{max-height:520px;}
     .navlinks a{width:100%;padding:14px 24px;}
     .navlinks .btn{margin:10px 24px;width:calc(100% - 48px);justify-content:center;}
     .burger{display:flex;}
+  }
+  @media(max-width:680px){
     .sec{padding:64px 0;}
     .hero .wrap{padding-top:60px;padding-bottom:70px;}
     .g3,.g4,.g2,.assure{grid-template-columns:1fr;}
@@ -317,6 +319,7 @@
       <a href="#services" onclick="closeNav()">Services</a>
       <a href="#pricing" onclick="closeNav()">Pricing</a>
       <a href="#clients" onclick="closeNav()">Clients</a>
+      <a href="#creators" onclick="closeNav()">Creators</a>
       <a href="events.html" onclick="closeNav()">Event Artists</a>
       <a class="btn btn-gold" href="#contact" onclick="closeNav()">Get a Quote</a>
     </nav>
