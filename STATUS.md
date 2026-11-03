@@ -105,14 +105,17 @@ Grow Shanora's revenue through a professional web presence that converts visitor
   Repo moved to `github.com/satnamsinghdhillon/shanora-site`; Cloudflare
   reconnected to it.
 
+- **Creator collabs section** (Nov 3 2026): new `#creators` section on
+  `index.html` (between Platforms and the Events promo) with a 3-step
+  explainer and an Apply Now button to the Google Form
+  `https://forms.gle/u7pwsE6iLvwco5Tp6`. Linked from the footer only (nav
+  is already full). Founder photo is live at `assets/founder/`. "Miss Narang" removed from the Creators &
+  Influencers client list (she is shown as founder); founder intro approved.
+
 ## In Progress
 - Nothing active. Not yet committed/pushed — visual check pending (see
   Next Steps).
 
-## Next Steps
-- Add the founder photo at `assets/founder/shankhani-narang.jpg` (initials
-  placeholder shows until then) and confirm the founder intro wording.
-- Decide whether "Miss Narang" should stay in the Creators client list now
   that she is shown as founder.
 - Visually confirm the new Jhanki Troupes crossfade gallery in a browser
   (opened `events.html` locally for manual check — Claude in Chrome isn't

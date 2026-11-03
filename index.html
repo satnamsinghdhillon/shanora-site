@@ -137,6 +137,21 @@
   .assure b{display:block;font-size:15px;color:var(--gold-lt);margin-bottom:4px;}
   .assure span{font-size:13px;opacity:.85;line-height:1.5;}
 
+  /* ---------- creator collabs ---------- */
+  .collab{display:grid;grid-template-columns:1.15fr 1fr;gap:50px;align-items:center;}
+  .csteps{margin-top:26px;display:grid;gap:16px;}
+  .cstep{display:flex;gap:14px;align-items:flex-start;}
+  .cstep .cn{flex:0 0 36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;
+    font-size:15px;color:#0B1626;background:linear-gradient(145deg,#E8C56B,#C9A24B);}
+  .cstep b{display:block;font-size:16px;line-height:1.3;}
+  .cstep span{display:block;font-size:14px;color:var(--slate);margin-top:2px;}
+  .collab-card{background:linear-gradient(155deg,#0B1626,#16314E);border-radius:22px;padding:36px 32px;color:#F0E9D8;text-align:center;
+    box-shadow:0 18px 40px rgba(11,22,38,.18);}
+  .collab-card .k{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-lt);font-weight:700;margin-bottom:12px;}
+  .collab-card h3{font-size:24px;font-weight:800;line-height:1.25;margin-bottom:10px;color:#fff;}
+  .collab-card p{font-size:15px;opacity:.88;margin-bottom:22px;}
+  .collab-card .fine{font-size:12px;opacity:.65;margin-top:14px;}
+
   /* ---------- founder ---------- */
   .founder{display:grid;grid-template-columns:300px 1fr;gap:44px;align-items:center;margin-top:64px;padding:36px;
     background:var(--cream);border:1px solid var(--line);border-radius:24px;}
@@ -259,6 +274,7 @@
   /* ---------- responsive ---------- */
   @media(max-width:900px){
     .about-grid{grid-template-columns:1fr;gap:36px;}
+    .collab{grid-template-columns:1fr;gap:36px;}
     .founder{grid-template-columns:1fr;padding:26px;gap:28px;}
     .fphoto{max-width:300px;width:100%;margin:0 auto;}
     .assure{grid-template-columns:repeat(2,1fr);}
@@ -513,7 +529,6 @@
     <div class="subhead" style="margin-top:36px;">Creators &amp; Influencers</div>
     <div class="grid g2">
       <div class="client"><div class="mono">TI</div><div><b>@train_insane_era</b><span>Rishabh Kumar · Influencer</span></div></div>
-      <div class="client"><div class="mono">MN</div><div><b>Miss Narang</b><span>Influencer · Personal Brand</span></div></div>
     </div>
   </div>
 </section>
@@ -534,6 +549,33 @@
       <div class="plat"><div class="pi" style="background:#FF0000;"><svg viewBox="0 0 24 24"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.7-1.7C19.3 5.2 12 5.2 12 5.2s-7.3 0-8.9.4A2.5 2.5 0 0 0 1.4 7.3C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 0 0 1.7 1.7c1.6.4 8.9.4 8.9.4s7.3 0 8.9-.4a2.5 2.5 0 0 0 1.7-1.7C23 15.2 23 12 23 12zM9.7 15.1V8.9l5.4 3.1z"/></svg></div><div><b>YouTube</b><span>Shorts &amp; Long-form</span></div></div>
       <div class="plat"><div class="pi" style="background:#000;"><svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.6 8.7L23 22h-6.9l-5.4-7-6.2 7H1.3l8.1-9.3L1 2h7l4.9 6.5zm-1.2 18h1.7L7.4 3.8H5.6z"/></svg></div><div><b>X (Twitter)</b><span>Real-time Engagement</span></div></div>
       <div class="plat"><div class="pi" style="background:#000;"><svg viewBox="0 0 24 24"><path d="M16.6 5.8a4.3 4.3 0 0 1-1-2.8h-3.3v13.3a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1v-3.4a6 6 0 1 0 5.1 5.9V9.7a7.5 7.5 0 0 0 4.4 1.4V7.8a4.3 4.3 0 0 1-3.4-2z"/></svg></div><div><b>TikTok</b><span>Viral Short-form</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CREATOR COLLABS ============ -->
+<section class="sec" id="creators">
+  <div class="wrap">
+    <div class="collab">
+      <div>
+        <span class="eyebrow">For Creators</span>
+        <h2>Creator looking for <span class="accent">collabs?</span></h2>
+        <div class="rule"></div>
+        <p class="lead">If you create content on Instagram, YouTube or any other platform and want to work with brands, tell us about yourself. Our team reviews every application and reaches out to you directly.</p>
+        <div class="csteps">
+          <div class="cstep"><span class="cn">1</span><div><b>Fill out the form</b><span>Share your profile, niche and audience. It only takes a couple of minutes.</span></div></div>
+          <div class="cstep"><span class="cn">2</span><div><b>We review your profile</b><span>We look at your content, engagement and the kind of work you want to do.</span></div></div>
+          <div class="cstep"><span class="cn">3</span><div><b>We reach out to you</b><span>Our team contacts you directly to talk through collaboration opportunities.</span></div></div>
+        </div>
+      </div>
+      <div class="collab-card">
+        <div class="k">Creator Applications</div>
+        <h3>Apply to collaborate with Shanora</h3>
+        <p>No fee to apply. Submit the form and we'll take it from there.</p>
+        <a class="btn btn-gold" href="https://forms.gle/u7pwsE6iLvwco5Tp6" target="_blank" rel="noopener noreferrer">Apply Now
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <div class="fine">Opens a Google Form in a new tab.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -601,7 +643,7 @@
       </a>
       <div class="foot-links">
         <a href="#about">About</a><a href="#services">Services</a><a href="#pricing">Pricing</a>
-        <a href="#clients">Clients</a><a href="events.html">Event Artists</a><a href="#contact">Contact</a>
+        <a href="#clients">Clients</a><a href="#creators">Creator Collabs</a><a href="events.html">Event Artists</a><a href="#contact">Contact</a>
       </div>
     </div>
     <div class="foot-bot">
