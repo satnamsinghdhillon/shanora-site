@@ -112,6 +112,13 @@ Grow Shanora's revenue through a professional web presence that converts visitor
   is already full). Founder photo is live at `assets/founder/`. "Miss Narang" removed from the Creators &
   Influencers client list (she is shown as founder); founder intro approved.
 
+- **Call scheduler** (Nov 3 2026): Cal.com popup embed (`cal.com/shanoradigital/30min`,
+  namespace `30min`, gold brand colour) on `index.html`. Triggered from the nav
+  gold button (replaced "Get a Quote"), the hero CTA, and a new card in the
+  Contact section. Buttons also work as plain links if the script is blocked.
+  Zoom + Google Calendar are connected inside the Cal.com account, not in code.
+  Not yet tested in a real browser.
+
 ## In Progress
 - Nothing active. Everything is pushed; visual check pending (see
   Next Steps).
