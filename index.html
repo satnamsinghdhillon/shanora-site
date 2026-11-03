@@ -72,6 +72,30 @@
   .hero h1 .hl{color:var(--gold-lt);}
   .hero p.sub{font-size:clamp(15px,2vw,18px);color:#D6CFC0;max-width:60ch;margin-top:22px;line-height:1.7;}
   .hero .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;}
+  .hero-visual{position:relative;padding:26px 0 30px 10px;}
+  .hv-card{background:rgba(255,255,255,.06);border:1px solid rgba(201,162,75,.3);border-radius:22px;padding:22px;
+    backdrop-filter:blur(6px);box-shadow:0 24px 60px rgba(0,0,0,.35);}
+  .hv-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;font-weight:700;font-size:15px;color:#fff;}
+  .hv-head em{font-style:normal;font-size:12px;color:var(--gold-lt);letter-spacing:1px;text-transform:uppercase;}
+  .hv-days{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;}
+  .hv-day{display:flex;flex-direction:column;gap:6px;min-height:150px;padding:8px 5px;border-radius:12px;background:rgba(255,255,255,.05);}
+  .hv-day small{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#B9B2A2;text-align:center;}
+  .hv-day i{font-style:normal;font-size:10px;font-weight:700;text-align:center;padding:6px 2px;border-radius:8px;color:#0B1626;}
+  .hv-day .c1{background:linear-gradient(145deg,#E8C56B,#C9A24B);}
+  .hv-day .c2{background:#9DB8DD;}
+  .hv-day .c3{background:#F1D9C4;}
+  .hv-day .c4{background:#C7B3E6;}
+  .hv-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:16px;font-size:12px;color:#D6CFC0;}
+  .hv-steps b{color:var(--gold-lt);margin-right:5px;}
+  .hv-float{position:absolute;background:#fff;color:var(--ink);border-radius:14px;padding:11px 16px;font-size:13px;font-weight:700;
+    box-shadow:0 14px 34px rgba(0,0,0,.35);display:flex;align-items:center;gap:8px;}
+  .hv-float b{width:22px;height:22px;border-radius:50%;background:linear-gradient(145deg,#E8C56B,#C9A24B);display:flex;
+    align-items:center;justify-content:center;font-size:12px;color:#0B1626;}
+  .hv-float.f1{top:0;right:-6px;}
+  .hv-float.f2{bottom:0;left:-6px;}
+  .hv-float.f2 span{width:22px;height:22px;border-radius:50%;margin-right:-14px;border:2px solid #fff;}
+  .hv-float.f2 em{font-style:normal;margin-left:22px;}
   .hero .stats{display:flex;flex-wrap:wrap;gap:40px;margin-top:54px;padding-top:30px;border-top:1px solid rgba(201,162,75,.22);}
   .hero .stat .n{font-size:34px;font-weight:800;color:var(--gold-lt);line-height:1;}
   .hero .stat .l{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#B9B2A2;margin-top:7px;}
@@ -274,6 +298,8 @@
   /* ---------- responsive ---------- */
   @media(max-width:900px){
     .about-grid{grid-template-columns:1fr;gap:36px;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-visual{display:none;}
     .collab{grid-template-columns:1fr;gap:36px;}
     .founder{grid-template-columns:1fr;padding:26px;gap:28px;}
     .fphoto{max-width:300px;width:100%;margin:0 auto;}
@@ -332,13 +358,43 @@
   <div class="glow" style="width:340px;height:340px;background:#C9A24B;top:-60px;right:6%;"></div>
   <div class="glow" style="width:300px;height:300px;background:#2C5282;bottom:-80px;left:-4%;opacity:.4;"></div>
   <div class="wrap">
+    <div class="hero-grid">
+    <div class="hero-copy">
     <span class="pill">★ 8+ Years of Combined Expertise</span>
     <h1>We grow brands that people <span class="hl">love to follow.</span></h1>
     <p class="sub">Shanora Digital is a full-service social media agency that crafts tailored strategies to amplify your brand, engage your audience, and turn followers into customers — across every platform that matters.</p>
     <div class="cta-row">
       <a class="btn btn-gold" href="https://cal.com/shanoradigital/30min" data-cal-link="shanoradigital/30min" data-cal-namespace="30min" data-cal-config='{"layout":"month_view"}' onclick="return false;">Book a Free Strategy Call
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-ghost" href="#contact">Get a Quote</a>
       <a class="btn btn-ghost" href="#pricing">View Pricing</a>
+    </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hv-card">
+        <div class="hv-head"><span>Content Calendar</span><em>This week</em></div>
+        <div class="hv-days">
+          <div class="hv-day"><small>Mon</small><i class="c1">Reel</i><i class="c3">Story</i></div>
+          <div class="hv-day"><small>Tue</small><i class="c2">Post</i></div>
+          <div class="hv-day"><small>Wed</small><i class="c4">Carousel</i><i class="c3">Story</i></div>
+          <div class="hv-day"><small>Thu</small><i class="c1">Reel</i></div>
+          <div class="hv-day"><small>Fri</small><i class="c2">Post</i><i class="c3">Story</i></div>
+          <div class="hv-day"><small>Sat</small><i class="c1">Reel</i></div>
+          <div class="hv-day"><small>Sun</small><i class="c3">Story</i></div>
+        </div>
+        <div class="hv-steps">
+          <div><b>✓</b>Strategy</div><div><b>✓</b>Creative</div><div><b>✓</b>Publishing</div><div><b>✓</b>Reporting</div>
+        </div>
+      </div>
+      <div class="hv-float f1"><b>✓</b> Monthly report ready</div>
+      <div class="hv-float f2">
+        <span style="background:linear-gradient(135deg,#F58529,#DD2A7B,#8134AF);"></span>
+        <span style="background:#1877F2;"></span>
+        <span style="background:#0A66C2;"></span>
+        <span style="background:#FF0000;"></span>
+        <em>All platforms</em>
+      </div>
+    </div>
     </div>
     <div class="stats">
       <div class="stat"><div class="n">8+</div><div class="l">Years Experience</div></div>

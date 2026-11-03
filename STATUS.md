@@ -119,6 +119,12 @@ Grow Shanora's revenue through a professional web presence that converts visitor
   Zoom + Google Calendar are connected inside the Cal.com account, not in code.
   Not yet tested in a real browser.
 
+- **Hero visual + Get a Quote** (Nov 3 2026): the right side of the first fold
+  was empty on laptops, so added a pure-CSS content-calendar card with two
+  floating badges (illustrative, no client numbers); hidden below 900px.
+  Added a Get a Quote button (to #contact) beside Book a Call in the hero.
+  Checked in headless Chrome at 1366x768.
+
 ## In Progress
 - Nothing active. Everything is pushed; visual check pending (see
   Next Steps).
